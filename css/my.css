@@ -11,3 +11,12 @@
 .article-header:hover{s
 	padding: 0;
 }
+
+#player{
+	width: 300px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+/*头像抖动*/

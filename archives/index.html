@@ -45,6 +45,10 @@ ga('send', 'pageview');
 
   
 
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  <!-- 自定义样式 -->
+  <link rel="stylesheet" href="css/my.css">
 </head>
 
 <body>
@@ -98,17 +102,45 @@ ga('send', 'pageview');
 		        
 			</div>
 		</nav>
+
 		<nav class="header-music" style="margin-top:70px;">
-			<!--网易云音乐-->
+			<!--网易云音乐
 				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=52 src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=32"></iframe>
+			-->
 		</nav>
 	</header>
-</div>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/clicklove.js"></script>
 
-<!-- 自定义样式 -->
-<link rel="stylesheet" href="css/my.css">
+	<div id='player'>
+			<style>
+			    #aplayer {
+			        width: 100%;
+			        margin: 0 auto;
+			    }
+			    @media screen and (max-device-width: 400px) {
+			        #aplayer {
+			            width: 100%;
+			        }
+			    }
+			</style>
+			<link rel="stylesheet" href="dist/APlayer.min.css">
+			<div id="aplayer"></div>
+			<script src="dist/APlayer.js"></script>
+			<script>
+				const app = new APlayer({
+    		container: document.getElementById('aplayer'),
+    		audio: [{
+        name: 'Enchanted',            <!-- 歌曲名称-->
+        artist: 'Taylor Swift',          <!-- 歌曲作者-->
+        url: 'https://d11.baidupcs.com/file/0fac392c917a02130314568bf4a63e77?bkt=p3-14000fac392c917a02130314568bf4a63e777632249b00000058e5b0&xcode=93bbe8170e0f52ba0d94b7d58e1f97dd6894e8dc7c31e735c60fab34555a4f5c9078b5d890c03c5587d9b687e059f4b80b2977702d3e6764&fid=1949044204-250528-284183868111587&time=1541503593&sign=FDTAXGERLQBHSK-DCb740ccc5511e5e8fedcff06b081203-umNqDBgJJ0UrQPNSIXLiQPXZy10%3D&to=d11&size=5825968&sta_dx=5825968&sta_cs=3237&sta_ft=mp3&sta_ct=0&sta_mt=0&fm2=MH%2CYangquan%2CAnywhere%2C%2Cguangdong%2Ccnc&ctime=1541503536&mtime=1541503536&resv0=cdnback&resv1=0&vuk=1949044204&iv=0&htype=&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=14000fac392c917a02130314568bf4a63e777632249b00000058e5b0&sl=76480590&expires=8h&rt=sh&r=378772270&mlogid=7185369883392430559&vbdid=1196083013&fin=Enchanted.mp3&fn=Enchanted.mp3&rtype=1&dp-logid=7185369883392430559&dp-callid=0.1.1&hps=1&tsl=80&csl=80&csign=E6Y1gzed%2Ber0HD5T6usfHfpdAtk%3D&so=0&ut=6&uter=4&serv=0&uc=1203090363&ti=d8768d13a65657dea17980f3ca449fd0f7c83c657f8747ab&by=themis',      <!-- 歌曲路径-->
+        cover: 'http://p2.music.126.net/GkKqLo7rY-Uxs-415At1xg==/109951163008406494.jpg?param=130y130',  <!-- 歌曲封面图片-->
+        "autoplay": true,     // （可选) 自动播放，移动端浏览器暂时不支持此功能
+        theme: '#46718b'           <!-- 选中歌曲的主题-->
+    }]
+});
+</script>
+	</div>
+</div>
+
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -295,7 +327,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
         </div>
         <div class="widget tagcloud search-tag">
-          <p class="search-tag-wording">tag:</p>
+          <p class="search-tag-wording">标签:</p>
           <label class="search-switch">
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
