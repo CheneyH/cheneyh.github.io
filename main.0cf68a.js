@@ -640,7 +640,6 @@
 
         var o = function (e, t, n) {
             function o() {
-                console.log(t.scrollTop, document.documentElement.scrollTop, document.body.scrollTop)
                 e.style.display = (t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > (n || 110) ? "block" : "none"
             }
 
