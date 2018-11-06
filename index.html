@@ -251,22 +251,23 @@ ga('send', 'pageview');
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
 <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
 <script async="">
-    var notify = false == true ? true : false;
-    var verify = false == true ? true : false;
-    var visitor = true == true ? true : false;
+//    var notify = false == true ? true : false;
+//    var verify = false == true ? true : false;
+//    var visitor = true == true ? true : false;
     window.onload = function() {
         new Valine({
             av: AV,
             el: '#vcomment',
-            notify: notify,
-            verify: verify,
+            notify: false,
+            verify: true,
             app_id: "ig52RtR2cJes2U4V7tim3RRk-9Nh9j0Va",
             app_key: "b1tCA0Y9Yrjwdv44Mu9BFSRr",
             placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
             avatar: "",
             avatar_cdn: "https://sdn.geekzu.org/avatar/",
-            pageSize: 15
+            pageSize: "15"
         });
+        document.getElementsByClassName('vpreview-btn')[0].innerText = "预览";
     }
 </script>
   </section>
