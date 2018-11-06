@@ -1,0 +1,13 @@
+.profilepic:hover{
+	transform: rotate(360deg);
+	transition: transform 2s;
+}
+
+.article-header:hover{
+	border-left: 5px solid #cfe8ff;
+}
+
+@media screen and (max-width: 800px)
+.article-header:hover{s
+	padding: 0;
+}
