@@ -111,33 +111,11 @@ ga('send', 'pageview');
 	</header>
 
 	<div id='player'>
-			<style>
-			    #aplayer {
-			        width: 100%;
-			        margin: 0 auto;
-			    }
-			    @media screen and (max-device-width: 400px) {
-			        #aplayer {
-			            width: 100%;
-			        }
-			    }
-			</style>
 			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
-			<script>
-				const app = new APlayer({
-    		container: document.getElementById('aplayer'),
-    		audio: [{
-        name: 'Enchanted',            <!-- 歌曲名称-->
-        artist: 'Taylor Swift',          <!-- 歌曲作者-->
-        url: 'music/Enchanted.mp3',      <!-- 歌曲路径-->
-        cover: 'music/Enchanted.jpg',  <!-- 歌曲封面图片-->
-        autoplay: true,     // （可选) 自动播放，移动端浏览器暂时不支持此功能
-        theme: '#46718b',           <!-- 选中歌曲的主题-->
-    }]
-});
-</script>
+			<script src="js/my-aplayer.js"></script>
+
 	</div>
 </div>
 
