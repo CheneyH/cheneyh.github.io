@@ -14,12 +14,10 @@
 	var aplayer_img = document.getElementsByClassName('aplayer-img')[0];
 	app.on('play',function() {
 		aplayer_img.style.animationPlayState = 'running';
-		console.log('player play');
 	});
 
 	app.on('pause',function() {
 		aplayer_img.style.animationPlayState = 'paused';
-		console.log('player ended');
 	});
 
 }())
