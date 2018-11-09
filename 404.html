@@ -156,7 +156,7 @@
       <a class="article-title" href="javascript:;">404 Not Found</a>
     </h1>
         <a href="javascript:;" class="archive-article-date">
-  	<time datetime="2018-11-03T13:16:51.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
+<!--   	<time datetime="2018-11-03T13:16:51.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time> -->
   	<script>
   		(function() {
   			var a = document.getElementsByClassName('archive-article-date')[0];
@@ -166,11 +166,10 @@
   			time.itemprop = 'datePublished';
   			var i = document.createElement('i');
   			i.className = 'icon-calendar icon';
-  			time.appendChild(i);
   			var year = date.getFullYear();
   			var month = ('0' + (date.getMonth() + 1)).slice(-2);
   			var day = ('0' + date.getDate()).slice(-2);
-  			time.innerText = year + '-' + month + '-' + day;
+  			time.innerHTML = i + year + '-' + month + '-' + day;
   			a.appendChild(time);
   		}())
   	</script>
