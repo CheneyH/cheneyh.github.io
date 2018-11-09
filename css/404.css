@@ -23,6 +23,15 @@
 }
 
 .error-img{
-	height: 340px;
-	background: url('../img/404.png');
+	position: relative;
+	animation: move 5s infinite;
+	left: 0;
+}
+
+@-webkit-keyframes move{
+	0%{left:0;}
+	25%{left:-50px;}
+	50%{left:0;}
+	75%{left:50px;}
+	100%{left:0;}
 }
