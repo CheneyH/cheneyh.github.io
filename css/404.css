@@ -23,5 +23,6 @@
 }
 
 .error-img{
-	background: url('img/404.png');
+	height: 340px;
+	background: url('../img/404.png');
 }
