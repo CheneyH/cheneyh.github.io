@@ -331,11 +331,11 @@ function data2str(data) {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -435,7 +435,7 @@ function data2str(data) {
 <p>网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。</p>
 <p>1.打开 apache 安装目录，找到 httpd.conf 这个文件<br><img src="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.1.png" alt="python3-6-wamp配置python脚本环境（Windows）.1.png" title=""></p>
 <p>拷贝一份，防止不成功！！！（万一不成功还可以恢复到原始状态）</p>
-<p>接下来用notpad++或者sublime text之类的文本编辑器打开</p>
+<p>接下来用 notpad++ 或者 sublime text 之类的文本编辑器打开</p>
 <p>2.找到这一行</p>
 <pre><code>LoadModule cgi_module modules/mod_cgi.so
 </code></pre><p>如果行首有#注释，删去#；如果没有这一行就添加。</p>
@@ -497,6 +497,321 @@ print(&apos;hello world&apos;)
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .info{display:none}
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment v"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script async="">
+    window.onload = function() {
+        new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: false,
+            verify: true,
+            app_id: "ig52RtR2cJes2U4V7tim3RRk-9Nh9j0Va",
+            app_key: "b1tCA0Y9Yrjwdv44Mu9BFSRr",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            avatar: "",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: "15"
+        });
+        document.getElementsByClassName('vpreview-btn')[0].innerText = "预览";
+    }
+</script>
+  </section>
+
+
+  
+    <article id="post-JavaScript-判断数组和对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/08/JavaScript-判断数组和对象/">JavaScript 判断数组和对象</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/08/JavaScript-判断数组和对象/" class="archive-article-date">
+  	<time datetime="2018-11-08T08:08:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。</p>
+<p>这里提供三种方法识别数组还是对象。</p>
+<h2 id="1-Array-isArray"><a href="#1-Array-isArray" class="headerlink" title="1. Array.isArray()"></a>1. Array.isArray()</h2><p>Array.isArray() 用于确定传递的值是否是一个Array。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png" alt="JavaScript-判断数组和对象.1.png" title=""></p>
+<h2 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2. constructor"></a>2. constructor</h2><p>数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png" alt="JavaScript-判断数组和对象.2.png" title=""></p>
+<h2 id="3-instanceof"><a href="#3-instanceof" class="headerlink" title="3. instanceof"></a>3. instanceof</h2><p>补充：A instanceof B 判断A的原型链上是否有B的原型</p>
+<p>比如 数组[1,2]的原型链上有Array和Object，所以[1,2] instanceof Array，[1,2] instanceof Object都会返回true</p>
+<p>而对象{‘a’:123}的原型链上只有Object，所以{‘a’:123} instanceof Array会返回false，而{‘a’:123} instanceof Object会返回true</p>
+<p>所以我们判断一个变量是数组还是对象可以查看它的原型链上是否有Array。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png" alt="JavaScript-判断数组和对象.3.png" title=""></p>
+<h2 id="4-Object-prototype-toString-call"><a href="#4-Object-prototype-toString-call" class="headerlink" title="4. Object.prototype.toString.call()"></a>4. Object.prototype.toString.call()</h2><p>通过改变toString函数中this的指向，判断参数的类型<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png" alt="JavaScript-判断数组和对象.4.png" title=""></p>
+<p>注意：在跨域判断时，instanceof 会失效，toString 方法有效</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/08/JavaScript-判断数组和对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .info{display:none}
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment v"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script async="">
+    window.onload = function() {
+        new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: false,
+            verify: true,
+            app_id: "ig52RtR2cJes2U4V7tim3RRk-9Nh9j0Va",
+            app_key: "b1tCA0Y9Yrjwdv44Mu9BFSRr",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            avatar: "",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: "15"
+        });
+        document.getElementsByClassName('vpreview-btn')[0].innerText = "预览";
+    }
+</script>
+  </section>
+
+
+  
+    <article id="post-JavaScript-的原型和原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/02/JavaScript-的原型和原型链/">JavaScript 的原型和原型链</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/02/JavaScript-的原型和原型链/" class="archive-article-date">
+  	<time datetime="2018-11-02T02:52:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、原型"><a href="#一、原型" class="headerlink" title="一、原型"></a>一、原型</h1><p>JavaScript 原型是构造函数所构造对象的模板。</p>
+<p>例如：</p>
+<pre><code>function Person(name,age,sex){
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+}
+Person.prototype.hair = &apos;black&apos;;
+Person.prototype.skin = &apos;yellow&apos;;
+
+var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
+</code></pre><p>那么person为<img src="/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.1.png" alt="JavaScript-的原型和原型链.1.png" title=""></p>
+<p>可以看到 person 具有的显式属性只有 name, age, sex，那如果我们访问 person.skin 和 person.hair 会怎么样呢？<br><img src="/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.2.png" alt="JavaScript-的原型和原型链.2.png" title=""></p>
+<p>由于 person 自身没有设置 hair 和 skin 属性，那么访问时系统就会查找它的原型中的属性。</p>
+<p>我们可以这样理解，prototype 是 DNA，其中有这个种族共有的特性，比如我们的黑头发黄皮肤是刻在DNA中的，不需要后期赋值就具有的属性。</p>
+<p>在查看 person 时，我们发现它有一个__proto__属性，在 chrome 控制台呈浅粉色，访问它<br><img src="/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.3.png" alt="JavaScript-的原型和原型链.3.png" title=""></p>
+<p>这种以双下划线开头和结尾的变量一般为系统赋予的隐式变量，即系统不希望被修改的属性（当然，如果你想修改，它也没办法）。</p>
+<p>__proto__指向了构造函数的原型，即构造这个对象的模板</p>
+<p>实际上在构造函数中，系统隐式地添加了这一句</p>
+<pre><code>this.__proto__ = Person.prototype;
+</code></pre><p>person.__proto__和Person.prototype指向同一块内存，而那块内存保存着模板信息，即</p>
+<pre><code>this.__proto__ = Person.prototype = {
+    hair: &apos;black&apos;,
+    skin: &apos;yellow&apos;
+}
+</code></pre><p>至此，我们知道，构造函数的prototype为一个对象，这个对象保存着构造新对象时所用的模板信息，在构造新对象时，系统隐式地给对象赋予一个__proto__属性，并将构造函数的prototype的值传给它（传递的是上面代码中对象的地址）。访问生成的新对象的属性时，会优先访问该对象自己的属性值，如果该对象没有这个属性，就查找__proto__中的属性。</p>
+<hr>
+<p>以下为题目，供理解参考</p>
+<pre><code>// Q1
+function Person(name,age,sex){
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    this.__proto__ = Person.prototype;
+  }
+Person.prototype.hair = &apos;black&apos;;
+Person.prototype.skin = &apos;yellow&apos;;
+
+var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
+Person.prototype.hair = &apos;yellow&apos;;
+console.log(person.hair);
+// A1: yellow
+
+/********分割线，以下代码与以上代码无关********/
+
+// Q2
+function Person(name,age,sex){
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    this.__proto__ = Person.prototype;
+  }
+Person.prototype.hair = &apos;black&apos;;
+Person.prototype.skin = &apos;yellow&apos;;
+
+var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
+Person.prototype = {
+    hair: yellow
+}
+console.log(person.hair);
+// A2: black
+/********分割线，以下代码与以上代码无关********/
+
+// Q3
+function Person(name,age,sex){
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    this.__proto__ = Person.prototype;
+  }
+Person.prototype.hair = &apos;black&apos;;
+Person.prototype.skin = &apos;yellow&apos;;
+Person.prototype = {
+    hair: yellow
+}
+var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
+
+console.log(person.hair);
+// A3: yellow
+</code></pre><p>*注意prototype传递给__proto__为地址传递，即可解决以上问题</p>
+<h1 id="二、原型链"><a href="#二、原型链" class="headerlink" title="二、原型链"></a>二、原型链</h1><p>接下来谈一下原型链。</p>
+<pre><code>Grand.prototype.lastName = &quot;Smith&quot;;
+function Grand(){}
+var grand = new Grand();
+
+Father.prototype = grand;
+function Father(){}
+var father = new Father();
+
+Son.prototype = father;
+function Son(){}
+var son = new Son();
+
+console.log(son.lastName);
+</code></pre><p>执行以上的语句</p>
+<p>我们说过，访问生成的新对象的属性时，会优先访问该对象自己的属性值，如果该对象没有这个属性，就查找__proto__中的属性。</p>
+<p>son自己的属性里找不到lastName，就去son.__proto__里找，即father，而father的属性中也找不到lastName，那么继续向上，转向father.__proto__中查找，同理……最后终于在grand.__proto__中找到，这样原型连成链的结构称为原型链。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/02/JavaScript-的原型和原型链/">展开全文 >></a>
         </p>
       
 
@@ -650,6 +965,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">apache</a>
               </li>
             
@@ -663,10 +982,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
               <li class="article-tag-list-item">
