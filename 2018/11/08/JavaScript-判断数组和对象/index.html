@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png">
-<meta property="og:updated_time" content="2018-11-24T08:58:06.449Z">
+<meta property="og:updated_time" content="2018-11-24T10:03:41.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 判断数组和对象">
 <meta name="twitter:description" content="有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。 这里提供三种方法识别数组还是对象。 1. Array.isArray()Array.isArray() 用于确定传递的值是否是一个Array。 2. constructor数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。 3. instanceof补充：A i">
@@ -222,13 +222,13 @@ ga('send', 'pageview');
       
         <p>有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。</p>
 <p>这里提供三种方法识别数组还是对象。</p>
-<h2 id="1-Array-isArray"><a href="#1-Array-isArray" class="headerlink" title="1. Array.isArray()"></a>1. Array.isArray()</h2><p>Array.isArray() 用于确定传递的值是否是一个Array。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png" alt="JavaScript-判断数组和对象.1.png" title=""></p>
-<h2 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2. constructor"></a>2. constructor</h2><p>数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png" alt="JavaScript-判断数组和对象.2.png" title=""></p>
+<h2 id="1-Array-isArray"><a href="#1-Array-isArray" class="headerlink" title="1. Array.isArray()"></a>1. Array.isArray()</h2><p>Array.isArray() 用于确定传递的值是否是一个Array。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png" alt="JavaScript-判断数组和对象.1.png" title=""></p>
+<h2 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2. constructor"></a>2. constructor</h2><p>数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png" alt="JavaScript-判断数组和对象.2.png" title=""></p>
 <h2 id="3-instanceof"><a href="#3-instanceof" class="headerlink" title="3. instanceof"></a>3. instanceof</h2><p>补充：A instanceof B 判断A的原型链上是否有B的原型</p>
 <p>比如 数组[1,2]的原型链上有Array和Object，所以[1,2] instanceof Array，[1,2] instanceof Object都会返回true</p>
 <p>而对象{‘a’:123}的原型链上只有Object，所以{‘a’:123} instanceof Array会返回false，而{‘a’:123} instanceof Object会返回true</p>
-<p>所以我们判断一个变量是数组还是对象可以查看它的原型链上是否有Array。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png" alt="JavaScript-判断数组和对象.3.png" title=""></p>
-<h2 id="4-Object-prototype-toString-call"><a href="#4-Object-prototype-toString-call" class="headerlink" title="4. Object.prototype.toString.call()"></a>4. Object.prototype.toString.call()</h2><p>通过改变toString函数中this的指向，判断参数的类型<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png" alt="JavaScript-判断数组和对象.4.png" title=""></p>
+<p>所以我们判断一个变量是数组还是对象可以查看它的原型链上是否有Array。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png" alt="JavaScript-判断数组和对象.3.png" title=""></p>
+<h2 id="4-Object-prototype-toString-call"><a href="#4-Object-prototype-toString-call" class="headerlink" title="4. Object.prototype.toString.call()"></a>4. Object.prototype.toString.call()</h2><p>通过改变toString函数中this的指向，判断参数的类型<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png" alt="JavaScript-判断数组和对象.4.png" title=""></p>
 <p>注意：在跨域判断时，instanceof 会失效，toString 方法有效</p>
 
       
@@ -481,7 +481,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">

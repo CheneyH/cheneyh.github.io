@@ -7,25 +7,19 @@
   <meta name="google-site-verification" content="weqLwQAfGE_0VBtPYL-Za1RWTLutJNUMhu_vk2w5yhQ" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
-  <title>python3.6 + wamp 配置 python 脚本环境（Windows） | Cheney 的博客</title>
+  <title>HTML+CSS 相册简单布局 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。 1.打开 apache 安装目">
-<meta name="keywords" content="apache,python3.0,WampServer">
+  <meta name="description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。 有时候我们需要做出下图的效果 下方为缩略图，上面是大图，点击缩略图可以查看大图。 1.float布局CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。 &amp;lt;head&amp;gt; &amp;lt;style&amp;gt;         .main {             marg">
+<meta name="keywords" content="html,css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python3.6 + wamp 配置 python 脚本环境（Windows）">
-<meta property="og:url" content="https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/index.html">
+<meta property="og:title" content="HTML+CSS 相册简单布局">
+<meta property="og:url" content="https://cheneyh.github.io/2018/08/31/HTML+CSS 相册简单布局/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。 1.打开 apache 安装目">
-<meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.1.png">
-<meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.2.png">
-<meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.3.png">
-<meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.4.png">
-<meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.5.png">
-<meta property="og:updated_time" content="2018-11-24T08:44:12.982Z">
+<meta property="og:description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。 有时候我们需要做出下图的效果 下方为缩略图，上面是大图，点击缩略图可以查看大图。 1.float布局CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。 &amp;lt;head&amp;gt; &amp;lt;style&amp;gt;         .main {             marg">
+<meta property="og:updated_time" content="2018-11-24T10:04:08.248Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python3.6 + wamp 配置 python 脚本环境（Windows）">
-<meta name="twitter:description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。 1.打开 apache 安装目">
-<meta name="twitter:image" content="https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.1.png">
+<meta name="twitter:title" content="HTML+CSS 相册简单布局">
+<meta name="twitter:description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。 有时候我们需要做出下图的效果 下方为缩略图，上面是大图，点击缩略图可以查看大图。 1.float布局CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。 &amp;lt;head&amp;gt; &amp;lt;style&amp;gt;         .main {             marg">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
   
@@ -201,61 +195,133 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python3-6-wamp配置python脚本环境（Windows）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTML+CSS 相册简单布局" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      python3.6 + wamp 配置 python 脚本环境（Windows）
+      HTML+CSS 相册简单布局
     </h1>
   
 
         
-        <a href="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/" class="archive-article-date">
-  	<time datetime="2018-11-23T08:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
+        <a href="/2018/08/31/HTML+CSS 相册简单布局/" class="archive-article-date">
+  	<time datetime="2018-08-31T09:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。</p>
-<p>wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。</p>
-<p>网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。</p>
-<p>1.打开 apache 安装目录，找到 httpd.conf 这个文件<br><img src="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.1.png" alt="python3-6-wamp配置python脚本环境（Windows）.1.png" title=""></p>
-<p>拷贝一份，防止不成功！！！（万一不成功还可以恢复到原始状态）</p>
-<p>接下来用 notpad++ 或者 sublime text 之类的文本编辑器打开</p>
-<p>2.找到这一行</p>
-<pre><code>LoadModule cgi_module modules/mod_cgi.so
-</code></pre><p>如果行首有#注释，删去#；如果没有这一行就添加。</p>
-<p>3.找到这一行</p>
-<pre><code>Options Indexes FollowSymLinks
-</code></pre><p> 在这一句后面添加 </p>
-<pre><code>ExecCGI
-</code></pre><p>为了防止找错位置，放上截图<br><img src="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.2.png" alt="python3-6-wamp配置python脚本环境（Windows）.2.png" title=""></p>
-<p>注意对比前后文是否一致。</p>
-<p>4.找到这一行</p>
-<pre><code>AddHandler cgi-script .cgi
-</code></pre><p>在后面添加</p>
-<pre><code>.py
-</code></pre><img src="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.3.png" alt="python3-6-wamp配置python脚本环境（Windows）.3.png" title="">
-<ol start="5">
-<li>ctrl + s 保存，重启服务器</li>
-</ol>
-<p>6.测试，在 wamp/www 这个目录下建立 test.py 文件，写入以下代码</p>
-<pre><code>#!D:\Python\Python36\python.exe
-print(&quot;Content-type:text/html\n&quot;)
-print(&apos;hello world&apos;)
-</code></pre><p>第一行以注释方式指定本机 python 的绝对地址</p>
-<p>第二行打印 Content-type:text/html</p>
-<p>第三行打印空行（此处可以和第二行合并，及在第二行末尾加入换行符 ‘ \n’）</p>
-<p>第四行开始编写脚本</p>
-<p>7.浏览器地址框输入<a href="http://127.0.0.1/test.py，回车" target="_blank" rel="external">http://127.0.0.1/test.py，回车</a></p>
-<p>8.如果网页如下所示，即配置成功。<br><img src="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.4.png" alt="python3-6-wamp配置python脚本环境（Windows）.4.png" title=""></p>
-<p>我修改过端口地址，自定义了文件夹，所以地址可能有所不同。</p>
-<p>9.如果页面如下，将test.py的内容全部输出<br><img src="/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/python3-6-wamp配置python脚本环境（Windows）.5.png" alt="python3-6-wamp配置python脚本环境（Windows）.5.png" title=""><br>那么说明配置失败，请检查以上步骤是否有错误或遗漏，python地址是否正确。</p>
+        <p>今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。</p>
+<p>有时候我们需要做出下图的效果<br><br></p>
+<p>下方为缩略图，上面是大图，点击缩略图可以查看大图。</p>
+<p>1.float布局<br>CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。</p>
+<pre><code>&lt;head&gt;
+&lt;style&gt;
+        .main {
+            margin: 0 auto;
+        }
+
+        ul {
+            padding: 0;
+            width: 800px;
+            height: 80px;
+        }
+
+        ul li a img {
+            width: 100px;
+            height: 60px;
+        }
+
+        li {
+            list-style-type: none;
+            float: left;
+            margin: -10px 7px;
+        }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;main&quot; style=&quot;width: 800px;height: 600px;&quot;&gt;
+    &lt;img id=&quot;big_img&quot; src=&quot;images/壁纸/18000.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;ul id=&quot;bz&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18000.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18000.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18001.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18001.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18002.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18002.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18003.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18003.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18004.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18004.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18005.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18005.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18006.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18006.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>设置li标签float属性为left，即左浮动，使图片在同一行显示，再设置间距等细节即可完成效果。</p>
+<p>2.flex布局<br>这是今天重点要说的。首先我们了解一下什么是flex布局。</p>
+<p>Flex 是 Flexible Box 的缩写，翻译成中文就是 “弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为 Flex 布局。布局的传统解决方案，基于盒状模型，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。2009 年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+<p>以上这段话是网上复制的，可以很明确地告诉我们：<br><br><strong>1.flex布局不同于传统盒子模型的布局<br><br>2.不需要再考虑兼容性问题</strong><br></p>
+
+<p> 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称” 容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称” 项目”。</p>
+<p>在这个案例中，如果将ul设置为flex容器，那么每个li对象都是flex item。</p>
+<p>将上面的代码中style部分改成：</p>
+<pre><code>&lt;style&gt;
+        .main{
+            margin: 0 auto;
+        }
+
+        #big_img {
+            width: 800px;
+            height: 500px;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+        li {
+            list-style-type: none;
+            margin: 10px 7px;
+        }
+
+        ul li a img {
+            width: 100px;
+            height: 60px;
+        }
+&lt;/style&gt;
+</code></pre><p> 即可实现相同的效果</p>
+<p>最后配合JavaScript可以实现点击缩略图更换大图的效果。</p>
 
       
 
@@ -269,15 +335,11 @@ print(&apos;hello world&apos;)
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">apache</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">python3.0</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WampServer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
@@ -333,7 +395,7 @@ print(&apos;hello world&apos;)
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://cheneyh.github.io/2018/11/23/python3-6-wamp配置python脚本环境（Windows）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cheneyh.github.io/2018/08/31/HTML+CSS 相册简单布局/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -347,18 +409,18 @@ print(&apos;hello world&apos;)
   
 <nav id="article-nav">
   
-    <a href="/2018/11/08/JavaScript-判断数组和对象/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/21/HTTP协议及请求方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JavaScript 判断数组和对象
+          HTTP协议及请求方法
         
       </div>
     </a>
   
   
-    <a href="/2018/11/24/原生Ajax请求过程详解及函数封装/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">原生Ajax请求过程详解及函数封装</div>
+    <a href="/2018/11/02/JavaScript-的原型和原型链/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript 的原型和原型链</div>
       <i class="icon-circle-right"></i>
     </a>
   

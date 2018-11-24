@@ -579,13 +579,13 @@ print(&apos;hello world&apos;)
       
         <p>有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。</p>
 <p>这里提供三种方法识别数组还是对象。</p>
-<h2 id="1-Array-isArray"><a href="#1-Array-isArray" class="headerlink" title="1. Array.isArray()"></a>1. Array.isArray()</h2><p>Array.isArray() 用于确定传递的值是否是一个Array。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png" alt="JavaScript-判断数组和对象.1.png" title=""></p>
-<h2 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2. constructor"></a>2. constructor</h2><p>数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png" alt="JavaScript-判断数组和对象.2.png" title=""></p>
+<h2 id="1-Array-isArray"><a href="#1-Array-isArray" class="headerlink" title="1. Array.isArray()"></a>1. Array.isArray()</h2><p>Array.isArray() 用于确定传递的值是否是一个Array。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png" alt="JavaScript-判断数组和对象.1.png" title=""></p>
+<h2 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2. constructor"></a>2. constructor</h2><p>数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png" alt="JavaScript-判断数组和对象.2.png" title=""></p>
 <h2 id="3-instanceof"><a href="#3-instanceof" class="headerlink" title="3. instanceof"></a>3. instanceof</h2><p>补充：A instanceof B 判断A的原型链上是否有B的原型</p>
 <p>比如 数组[1,2]的原型链上有Array和Object，所以[1,2] instanceof Array，[1,2] instanceof Object都会返回true</p>
 <p>而对象{‘a’:123}的原型链上只有Object，所以{‘a’:123} instanceof Array会返回false，而{‘a’:123} instanceof Object会返回true</p>
-<p>所以我们判断一个变量是数组还是对象可以查看它的原型链上是否有Array。<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png" alt="JavaScript-判断数组和对象.3.png" title=""></p>
-<h2 id="4-Object-prototype-toString-call"><a href="#4-Object-prototype-toString-call" class="headerlink" title="4. Object.prototype.toString.call()"></a>4. Object.prototype.toString.call()</h2><p>通过改变toString函数中this的指向，判断参数的类型<br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png" alt="JavaScript-判断数组和对象.4.png" title=""></p>
+<p>所以我们判断一个变量是数组还是对象可以查看它的原型链上是否有Array。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png" alt="JavaScript-判断数组和对象.3.png" title=""></p>
+<h2 id="4-Object-prototype-toString-call"><a href="#4-Object-prototype-toString-call" class="headerlink" title="4. Object.prototype.toString.call()"></a>4. Object.prototype.toString.call()</h2><p>通过改变toString函数中this的指向，判断参数的类型<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png" alt="JavaScript-判断数组和对象.4.png" title=""></p>
 <p>注意：在跨域判断时，instanceof 会失效，toString 方法有效</p>
 
       
@@ -872,6 +872,493 @@ console.log(son.lastName);
 
 
   
+    <article id="post-HTML+CSS 相册简单布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/31/HTML+CSS 相册简单布局/">HTML+CSS 相册简单布局</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/31/HTML+CSS 相册简单布局/" class="archive-article-date">
+  	<time datetime="2018-08-31T09:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。</p>
+<p>有时候我们需要做出下图的效果<br><br></p>
+<p>下方为缩略图，上面是大图，点击缩略图可以查看大图。</p>
+<p>1.float布局<br>CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。</p>
+<pre><code>&lt;head&gt;
+&lt;style&gt;
+        .main {
+            margin: 0 auto;
+        }
+
+        ul {
+            padding: 0;
+            width: 800px;
+            height: 80px;
+        }
+
+        ul li a img {
+            width: 100px;
+            height: 60px;
+        }
+
+        li {
+            list-style-type: none;
+            float: left;
+            margin: -10px 7px;
+        }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;main&quot; style=&quot;width: 800px;height: 600px;&quot;&gt;
+    &lt;img id=&quot;big_img&quot; src=&quot;images/壁纸/18000.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;ul id=&quot;bz&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18000.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18000.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18001.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18001.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18002.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18002.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18003.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18003.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18004.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18004.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18005.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18005.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;images/壁纸/18006.jpg&quot;&gt;
+                &lt;img src=&quot;images/壁纸/18006.jpg&quot; alt=&quot;&quot;&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>设置li标签float属性为left，即左浮动，使图片在同一行显示，再设置间距等细节即可完成效果。</p>
+<p>2.flex布局<br>这是今天重点要说的。首先我们了解一下什么是flex布局。</p>
+<p>Flex 是 Flexible Box 的缩写，翻译成中文就是 “弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为 Flex 布局。布局的传统解决方案，基于盒状模型，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。2009 年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+<p>以上这段话是网上复制的，可以很明确地告诉我们：<br><br><strong>1.flex布局不同于传统盒子模型的布局<br><br>2.不需要再考虑兼容性问题</strong><br></p>
+
+<p> 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称” 容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称” 项目”。</p>
+<p>在这个案例中，如果将ul设置为flex容器，那么每个li对象都是flex item。</p>
+<p>将上面的代码中style部分改成：</p>
+<pre><code>&lt;style&gt;
+        .main{
+            margin: 0 auto;
+        }
+
+        #big_img {
+            width: 800px;
+            height: 500px;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+        li {
+            list-style-type: none;
+            margin: 10px 7px;
+        }
+
+        ul li a img {
+            width: 100px;
+            height: 60px;
+        }
+&lt;/style&gt;
+</code></pre><p> 即可实现相同的效果</p>
+<p>最后配合JavaScript可以实现点击缩略图更换大图的效果。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/31/HTML+CSS 相册简单布局/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .info{display:none}
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment v"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script async="">
+    window.onload = function() {
+        new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: false,
+            verify: true,
+            app_id: "ig52RtR2cJes2U4V7tim3RRk-9Nh9j0Va",
+            app_key: "b1tCA0Y9Yrjwdv44Mu9BFSRr",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            avatar: "",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: "15"
+        });
+        document.getElementsByClassName('vpreview-btn')[0].innerText = "预览";
+    }
+</script>
+  </section>
+
+
+  
+    <article id="post-HTTP协议及请求方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/21/HTTP协议及请求方法/">HTTP协议及请求方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/21/HTTP协议及请求方法/" class="archive-article-date">
+  	<time datetime="2018-08-21T07:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。</p>
+<p>http协议特点<br>①通信流程：断开式（无状态）</p>
+<p>断开式：http 协议每次响应完成后，会断开与客户端的连接</p>
+<p>无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系</p>
+<p>②内容格式：消息头和消息体</p>
+<p>http请求方法<br>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。</p>
+<p>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD 方法。</p>
+<p>HTTP1.1 新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<table><br><tr><br><th>序号</th><br><th>方法</th><br><th>描述</th><br></tr><br><tr><br><td>1</td><td>GET</td><td>请求指定的页面信息，并返回实体主体。</td><br></tr><br><tr><br><td>2</td><td>HEAD</td><td>类似于 get 请求，只不过返回的响应中没有具体的内容，用于获取报头</td><br></tr><br><tr><br><td>3</td><td>POST</td><td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和 / 或已有资源的修改。</td><br></tr><br><tr><br><td>4</td><td>PUT</td><td>从客户端向服务器传送的数据取代指定的文档的内容。</td><br></tr><br><tr><br><td>5</td><td>DELETE</td><td>请求服务器删除指定的页面。</td><br></tr><br><tr><br><td>6</td><td>CONNECT</td><td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td><br></tr><br><tr><br><td>7</td><td>OPTIONS</td><td>允许客户端查看服务器的性能。</td><br></tr><br><tr><br><td>8</td><td>TRACE</td><td>回显服务器收到的请求，主要用于测试或诊断。</td><br></tr><br></table>
+
+<p>注意：</p>
+<p>1）方法名称是区分大小写的，当某个请求所针对的资源不支持对应的请求方法的时候，服务器应当返回状态码 405（Mothod Not Allowed）；当服务器不认识或者不支持对应的请求方法时，应返回状态码 501（Not Implemented）。</p>
+<p>2）HTTP 服务器至少应该实现 GET 和 HEAD/POST 方法，其他方法都是可选的，此外除上述方法，特定的 HTTP 服务器支持扩展自定义的方法。</p>
+<p>get 和 post 区别<br>面试中一般会问到这个问题</p>
+<p>区别：</p>
+<table><br><tr><br><th>方法</th><th>数据量</th><th>携带方式</th><br></tr><br><tr><br><td>get</td><td>请求无消息体，只能携带少量数据</td><td>请求将数据放在 url 地址中</td><br></tr><br><tr><br><td>post</td><td>请求有消息体，可以携带大量数据</td><td>请求将数据放在消息体中</td><br></tr><br></table>
+
+
+<p>GET 请求请提交的数据放置在 HTTP 请求协议头中，而 POST 提交的数据则放在实体数据中；<br>GET 方式提交的数据最多只能有 1024 字节，而 POST 则没有此限制。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/21/HTTP协议及请求方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .info{display:none}
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment v"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script async="">
+    window.onload = function() {
+        new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: false,
+            verify: true,
+            app_id: "ig52RtR2cJes2U4V7tim3RRk-9Nh9j0Va",
+            app_key: "b1tCA0Y9Yrjwdv44Mu9BFSRr",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            avatar: "",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: "15"
+        });
+        document.getElementsByClassName('vpreview-btn')[0].innerText = "预览";
+    }
+</script>
+  </section>
+
+
+  
+    <article id="post-python-操作-Excel-表格文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/python-操作-Excel-表格文件/">python 操作 Excel 表格文件</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/25/python-操作-Excel-表格文件/" class="archive-article-date">
+  	<time datetime="2018-07-25T10:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>python 作为一种高效的代码，通常用来处理重复繁琐的工作，读写 Excel 表格就是一种，今天我们总结一下如何用 python 处理 Excel 文件。</p>
+<h1 id="一、读取Excel表格"><a href="#一、读取Excel表格" class="headerlink" title="一、读取Excel表格"></a>一、读取Excel表格</h1><p>这里我们用到 xlrd 模块（Excel read）</p>
+<h3 id="1-导入-xlrd-模块"><a href="#1-导入-xlrd-模块" class="headerlink" title="1.导入 xlrd 模块"></a>1.导入 xlrd 模块</h3><pre><code>import xlrd
+</code></pre><h3 id="2-打开-Excel-文件"><a href="#2-打开-Excel-文件" class="headerlink" title="2.打开 Excel 文件"></a>2.打开 Excel 文件</h3><pre><code>workbook = xlrd.open_workbook(&apos;example.xlsx&apos;)
+</code></pre><p>###3.获取所有 sheet 表格，例如表格名为 Sheet1###</p>
+<pre><code>sheet_names = workbook.sheet_names()
+</code></pre><p>###4.获取其中一个表格###</p>
+<pre><code>sheet1 = workbook.sheet_by_name(sheet_name)
+</code></pre><p>###5.按行读取###</p>
+<pre><code>for row_index in range(0, sheet1.nrows):
+    dataSet.append(sheet1.row_values(row_index))
+    print(row_values(row_index))
+</code></pre><p>所以读取一个完整 Excel 文件的程序为</p>
+<pre><code>#encoding utf-8
+import xlrd
+
+workbook = xlrd.open_workbook(&apos;example.xlsx&apos;)
+sheet_names = workbook.sheet_names()
+dataSet = []
+for sheet_name in sheet_names:
+    sheet1 = workbook.sheet_by_name(sheet_name)
+    labels = sheet1.row_values(0)  #第一行标题
+    print(sheet1.nrows)
+    for row_index in range(1, sheet1.nrows):
+        dataSet.append(sheet1.row_values(row_index))
+print(dataSet)
+</code></pre><h1 id="二、创建并填写-Excel-表格"><a href="#二、创建并填写-Excel-表格" class="headerlink" title="二、创建并填写 Excel 表格"></a>二、创建并填写 Excel 表格</h1><p>我们用到 xlwt 模块（Excel write）</p>
+<p>###1.导入xlwt模块###</p>
+<pre><code>import xlwt
+</code></pre><p>###2.创建工作簿###</p>
+<pre><code>workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
+</code></pre><p>###3.创建表###</p>
+<pre><code>sheet = workbook.add_sheet(&apos;Sheet1&apos;) #创建一个名叫Sheet1的表
+</code></pre><p>###4.写入数据###</p>
+<pre><code>sheet.write(row_index,column_index,data) # row_index是行数，column_index是列数，data是要写入的数据
+</code></pre><p>###5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）###</p>
+<pre><code>workbook.save(&apos;data.xls&apos;)
+</code></pre><p>完整的写表程序是</p>
+<pre><code>import xlwt
+
+workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
+sheet = workbook.add_sheet(&apos;Sheet1&apos;)
+for index in range(0,len(datas)):
+    sheet.write(index,0,datas[index])
+workbook.save(&apos;data.xls&apos;)
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/25/python-操作-Excel-表格文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .info{display:none}
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment v"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script async="">
+    window.onload = function() {
+        new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: false,
+            verify: true,
+            app_id: "ig52RtR2cJes2U4V7tim3RRk-9Nh9j0Va",
+            app_key: "b1tCA0Y9Yrjwdv44Mu9BFSRr",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            avatar: "",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: "15"
+        });
+        document.getElementsByClassName('vpreview-btn')[0].innerText = "预览";
+    }
+</script>
+  </section>
+
+
+  
   
 
 
@@ -965,7 +1452,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">
