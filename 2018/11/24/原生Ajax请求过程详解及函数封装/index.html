@@ -50,6 +50,7 @@ ga('send', 'pageview');
 
   
 
+  <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
@@ -116,12 +117,6 @@ ga('send', 'pageview');
 					<a class="mail" target="_blank" href="mailto:970320820@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
-		</nav>
-
-		<nav class="header-music" style="margin-top:70px;">
-			<!--网易云音乐
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=52 src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=32"></iframe>
-			-->
 		</nav>
 	</header>
 
@@ -499,6 +494,10 @@ function data2str(data) {
       	</div>
     </div>
   </div>
+  <script src="live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+    false && L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"http://localhost:4000/live2dw/koharu.model.json"},"display":{"position":"right","width":80,"height":180},"mobile":{"show":false}});
+  </script>
 </footer>
     </div>
     <script>
@@ -575,23 +574,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -608,6 +599,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

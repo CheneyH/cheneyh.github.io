@@ -13,10 +13,10 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 操作 Excel 表格文件">
-<meta property="og:url" content="https://cheneyh.github.io/2018/07/25/python-操作-Excel-表格文件/index.html">
+<meta property="og:url" content="https://cheneyh.github.io/2018/07/25/python 操作 Excel 表格文件/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
 <meta property="og:description" content="python 作为一种高效的代码，通常用来处理重复繁琐的工作，读写 Excel 表格就是一种，今天我们总结一下如何用 python 处理 Excel 文件。 一、读取Excel表格这里我们用到 xlrd 模块（Excel read） 1.导入 xlrd 模块import xlrd 2.打开 Excel 文件workbook = xlrd.open_workbook(&amp;apos;example.xl">
-<meta property="og:updated_time" content="2018-11-24T11:57:30.174Z">
+<meta property="og:updated_time" content="2018-11-24T15:25:18.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 操作 Excel 表格文件">
 <meta name="twitter:description" content="python 作为一种高效的代码，通常用来处理重复繁琐的工作，读写 Excel 表格就是一种，今天我们总结一下如何用 python 处理 Excel 文件。 一、读取Excel表格这里我们用到 xlrd 模块（Excel read） 1.导入 xlrd 模块import xlrd 2.打开 Excel 文件workbook = xlrd.open_workbook(&amp;apos;example.xl">
@@ -50,6 +50,7 @@ ga('send', 'pageview');
 
   
 
+  <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
@@ -116,12 +117,6 @@ ga('send', 'pageview');
 					<a class="mail" target="_blank" href="mailto:970320820@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
-		</nav>
-
-		<nav class="header-music" style="margin-top:70px;">
-			<!--网易云音乐
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=52 src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=32"></iframe>
-			-->
 		</nav>
 	</header>
 
@@ -195,7 +190,7 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python-操作-Excel-表格文件" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python 操作 Excel 表格文件" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -207,7 +202,7 @@ ga('send', 'pageview');
   
 
         
-        <a href="/2018/07/25/python-操作-Excel-表格文件/" class="archive-article-date">
+        <a href="/2018/07/25/python 操作 Excel 表格文件/" class="archive-article-date">
   	<time datetime="2018-07-25T10:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
 </a>
         
@@ -219,12 +214,9 @@ ga('send', 'pageview');
 <h1 id="一、读取Excel表格"><a href="#一、读取Excel表格" class="headerlink" title="一、读取Excel表格"></a>一、读取Excel表格</h1><p>这里我们用到 xlrd 模块（Excel read）</p>
 <h3 id="1-导入-xlrd-模块"><a href="#1-导入-xlrd-模块" class="headerlink" title="1.导入 xlrd 模块"></a>1.导入 xlrd 模块</h3><pre><code>import xlrd
 </code></pre><h3 id="2-打开-Excel-文件"><a href="#2-打开-Excel-文件" class="headerlink" title="2.打开 Excel 文件"></a>2.打开 Excel 文件</h3><pre><code>workbook = xlrd.open_workbook(&apos;example.xlsx&apos;)
-</code></pre><p>###3.获取所有 sheet 表格，例如表格名为 Sheet1###</p>
-<pre><code>sheet_names = workbook.sheet_names()
-</code></pre><p>###4.获取其中一个表格###</p>
-<pre><code>sheet1 = workbook.sheet_by_name(sheet_name)
-</code></pre><p>###5.按行读取###</p>
-<pre><code>for row_index in range(0, sheet1.nrows):
+</code></pre><h3 id="3-获取所有-sheet-表格，例如表格名为-Sheet1"><a href="#3-获取所有-sheet-表格，例如表格名为-Sheet1" class="headerlink" title="3.获取所有 sheet 表格，例如表格名为 Sheet1"></a>3.获取所有 sheet 表格，例如表格名为 Sheet1</h3><pre><code>sheet_names = workbook.sheet_names()
+</code></pre><h3 id="4-获取其中一个表格"><a href="#4-获取其中一个表格" class="headerlink" title="4.获取其中一个表格"></a>4.获取其中一个表格</h3><pre><code>sheet1 = workbook.sheet_by_name(sheet_name)
+</code></pre><h3 id="5-按行读取"><a href="#5-按行读取" class="headerlink" title="5.按行读取"></a>5.按行读取</h3><pre><code>for row_index in range(0, sheet1.nrows):
     dataSet.append(sheet1.row_values(row_index))
     print(row_values(row_index))
 </code></pre><p>所以读取一个完整 Excel 文件的程序为</p>
@@ -242,16 +234,11 @@ for sheet_name in sheet_names:
         dataSet.append(sheet1.row_values(row_index))
 print(dataSet)
 </code></pre><h1 id="二、创建并填写-Excel-表格"><a href="#二、创建并填写-Excel-表格" class="headerlink" title="二、创建并填写 Excel 表格"></a>二、创建并填写 Excel 表格</h1><p>我们用到 xlwt 模块（Excel write）</p>
-<p>###1.导入xlwt模块###</p>
-<pre><code>import xlwt
-</code></pre><p>###2.创建工作簿###</p>
-<pre><code>workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
-</code></pre><p>###3.创建表###</p>
-<pre><code>sheet = workbook.add_sheet(&apos;Sheet1&apos;) #创建一个名叫Sheet1的表
-</code></pre><p>###4.写入数据###</p>
-<pre><code>sheet.write(row_index,column_index,data) # row_index是行数，column_index是列数，data是要写入的数据
-</code></pre><p>###5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）###</p>
-<pre><code>workbook.save(&apos;data.xls&apos;)
+<h3 id="1-导入xlwt模块"><a href="#1-导入xlwt模块" class="headerlink" title="1.导入xlwt模块"></a>1.导入xlwt模块</h3><pre><code>import xlwt
+</code></pre><h3 id="2-创建工作簿"><a href="#2-创建工作簿" class="headerlink" title="2.创建工作簿"></a>2.创建工作簿</h3><pre><code>workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
+</code></pre><h3 id="3-创建表"><a href="#3-创建表" class="headerlink" title="3.创建表"></a>3.创建表</h3><pre><code>sheet = workbook.add_sheet(&apos;Sheet1&apos;) #创建一个名叫Sheet1的表
+</code></pre><h3 id="4-写入数据"><a href="#4-写入数据" class="headerlink" title="4.写入数据"></a>4.写入数据</h3><pre><code>sheet.write(row_index,column_index,data) # row_index是行数，column_index是列数，data是要写入的数据
+</code></pre><h3 id="5-保存文件（注意，此处保存为后缀名为-xlsx-文件可能报错）"><a href="#5-保存文件（注意，此处保存为后缀名为-xlsx-文件可能报错）" class="headerlink" title="5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）"></a>5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）</h3><pre><code>workbook.save(&apos;data.xls&apos;)
 </code></pre><p>完整的写表程序是</p>
 <pre><code>import xlwt
 
@@ -329,7 +316,7 @@ workbook.save(&apos;data.xls&apos;)
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://cheneyh.github.io/2018/07/25/python-操作-Excel-表格文件/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cheneyh.github.io/2018/07/25/python 操作 Excel 表格文件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -426,6 +413,10 @@ workbook.save(&apos;data.xls&apos;)
       	</div>
     </div>
   </div>
+  <script src="live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+    false && L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"http://localhost:4000/live2dw/koharu.model.json"},"display":{"position":"right","width":80,"height":180},"mobile":{"show":false}});
+  </script>
 </footer>
     </div>
     <script>
@@ -502,23 +493,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -535,6 +518,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

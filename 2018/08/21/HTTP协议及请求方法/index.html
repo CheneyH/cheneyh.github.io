@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
   <title>HTTP协议及请求方法 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。 http协议特点①通信流程：断开式（无状态） 断开式：http 协议每次响应完成后，会断开与客户端的连接 无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系 ②内容格式：消息头和消息体 http请求方法根据 HTTP 标准，HTTP 请求可以使用多种请求方法。 HTTP1.0 定义了三种请求方法： GET, POST 和">
+  <meta name="description" content="今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。 http协议特点①通信流程：断开式（无状态） 断开式：http 协议每次响应完成后，会断开与客户端的连接 无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系 ②内容格式：消息头和消息体 http请求方法根据 HTTP 标准，HTTP 请求可以使用多种请求方法。HTTP1.0 定义了三种请求方法： GET, POST 和">
 <meta name="keywords" content="http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP协议及请求方法">
 <meta property="og:url" content="https://cheneyh.github.io/2018/08/21/HTTP协议及请求方法/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。 http协议特点①通信流程：断开式（无状态） 断开式：http 协议每次响应完成后，会断开与客户端的连接 无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系 ②内容格式：消息头和消息体 http请求方法根据 HTTP 标准，HTTP 请求可以使用多种请求方法。 HTTP1.0 定义了三种请求方法： GET, POST 和">
-<meta property="og:updated_time" content="2018-11-24T11:38:54.831Z">
+<meta property="og:description" content="今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。 http协议特点①通信流程：断开式（无状态） 断开式：http 协议每次响应完成后，会断开与客户端的连接 无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系 ②内容格式：消息头和消息体 http请求方法根据 HTTP 标准，HTTP 请求可以使用多种请求方法。HTTP1.0 定义了三种请求方法： GET, POST 和">
+<meta property="og:updated_time" content="2018-11-24T15:23:05.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP协议及请求方法">
-<meta name="twitter:description" content="今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。 http协议特点①通信流程：断开式（无状态） 断开式：http 协议每次响应完成后，会断开与客户端的连接 无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系 ②内容格式：消息头和消息体 http请求方法根据 HTTP 标准，HTTP 请求可以使用多种请求方法。 HTTP1.0 定义了三种请求方法： GET, POST 和">
+<meta name="twitter:description" content="今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。 http协议特点①通信流程：断开式（无状态） 断开式：http 协议每次响应完成后，会断开与客户端的连接 无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系 ②内容格式：消息头和消息体 http请求方法根据 HTTP 标准，HTTP 请求可以使用多种请求方法。HTTP1.0 定义了三种请求方法： GET, POST 和">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
   
@@ -50,6 +50,7 @@ ga('send', 'pageview');
 
   
 
+  <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
@@ -116,12 +117,6 @@ ga('send', 'pageview');
 					<a class="mail" target="_blank" href="mailto:970320820@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
-		</nav>
-
-		<nav class="header-music" style="margin-top:70px;">
-			<!--网易云音乐
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=52 src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=32"></iframe>
-			-->
 		</nav>
 	</header>
 
@@ -220,17 +215,15 @@ ga('send', 'pageview');
 <p>断开式：http 协议每次响应完成后，会断开与客户端的连接</p>
 <p>无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系</p>
 <p>②内容格式：消息头和消息体</p>
-<p>http请求方法<br>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。</p>
-<p>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD 方法。</p>
-<p>HTTP1.1 新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
-<table><br><tr><br><th>序号</th><br><th>方法</th><br><th>描述</th><br></tr><br><tr><br><td>1</td><td>GET</td><td>请求指定的页面信息，并返回实体主体。</td><br></tr><br><tr><br><td>2</td><td>HEAD</td><td>类似于 get 请求，只不过返回的响应中没有具体的内容，用于获取报头</td><br></tr><br><tr><br><td>3</td><td>POST</td><td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和 / 或已有资源的修改。</td><br></tr><br><tr><br><td>4</td><td>PUT</td><td>从客户端向服务器传送的数据取代指定的文档的内容。</td><br></tr><br><tr><br><td>5</td><td>DELETE</td><td>请求服务器删除指定的页面。</td><br></tr><br><tr><br><td>6</td><td>CONNECT</td><td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td><br></tr><br><tr><br><td>7</td><td>OPTIONS</td><td>允许客户端查看服务器的性能。</td><br></tr><br><tr><br><td>8</td><td>TRACE</td><td>回显服务器收到的请求，主要用于测试或诊断。</td><br></tr><br></table>
+<p>http请求方法<br>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。<br>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD 方法。<br>HTTP1.1 新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<table><tr><th>序号</th><th>方法</th><th>描述</th></tr><tr><td>1</td><td>GET</td><td>请求指定的页面信息，并返回实体主体。</td></tr><tr><td>2</td><td>HEAD</td><td>类似于 get 请求，只不过返回的响应中没有具体的内容，用于获取报头</td></tr><tr><td>3</td><td>POST</td><td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和 / 或已有资源的修改。</td></tr><tr><td>4</td><td>PUT</td><td>从客户端向服务器传送的数据取代指定的文档的内容。</td><br></tr><tr><td>5</td><td>DELETE</td><td>请求服务器删除指定的页面。</td></tr><br><tr><td>6</td><td>CONNECT</td><td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td></tr><tr><td>7</td><td>OPTIONS</td><td>允许客户端查看服务器的性能。</td><br></tr><tr><td>8</td><td>TRACE</td><td>回显服务器收到的请求，主要用于测试或诊断。</td><br></tr></table>
 
 <p>注意：</p>
 <p>1）方法名称是区分大小写的，当某个请求所针对的资源不支持对应的请求方法的时候，服务器应当返回状态码 405（Mothod Not Allowed）；当服务器不认识或者不支持对应的请求方法时，应返回状态码 501（Not Implemented）。</p>
 <p>2）HTTP 服务器至少应该实现 GET 和 HEAD/POST 方法，其他方法都是可选的，此外除上述方法，特定的 HTTP 服务器支持扩展自定义的方法。</p>
 <p>get 和 post 区别<br>面试中一般会问到这个问题</p>
 <p>区别：</p>
-<table><br><tr><br><th>方法</th><th>数据量</th><th>携带方式</th><br></tr><br><tr><br><td>get</td><td>请求无消息体，只能携带少量数据</td><td>请求将数据放在 url 地址中</td><br></tr><br><tr><br><td>post</td><td>请求有消息体，可以携带大量数据</td><td>请求将数据放在消息体中</td><br></tr><br></table>
+<table><tr><th>方法</th><th>数据量</th><th>携带方式</th></tr><br><tr><td>get</td><td>请求无消息体，只能携带少量数据</td><td>请求将数据放在 url 地址中</td></tr><tr><td>post</td><td>请求有消息体，可以携带大量数据</td><td>请求将数据放在消息体中</td></tr></table>
 
 
 <p>GET 请求请提交的数据放置在 HTTP 请求协议头中，而 POST 提交的数据则放在实体数据中；<br>GET 方式提交的数据最多只能有 1024 字节，而 POST 则没有此限制。</p>
@@ -317,7 +310,7 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
-    <a href="/2018/07/25/python-操作-Excel-表格文件/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/25/python 操作 Excel 表格文件/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -409,6 +402,10 @@ ga('send', 'pageview');
       	</div>
     </div>
   </div>
+  <script src="live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+    false && L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"http://localhost:4000/live2dw/koharu.model.json"},"display":{"position":"right","width":80,"height":180},"mobile":{"show":false}});
+  </script>
 </footer>
     </div>
     <script>
@@ -485,23 +482,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -518,6 +507,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

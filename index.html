@@ -45,6 +45,7 @@ ga('send', 'pageview');
 
   
 
+  <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
@@ -111,12 +112,6 @@ ga('send', 'pageview');
 					<a class="mail" target="_blank" href="mailto:970320820@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
-		</nav>
-
-		<nav class="header-music" style="margin-top:70px;">
-			<!--网易云音乐
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=52 src="//music.163.com/outchain/player?type=2&id=26237342&auto=1&height=32"></iframe>
-			-->
 		</nav>
 	</header>
 
@@ -433,7 +428,7 @@ function data2str(data) {
         <p>最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。</p>
 <p>wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。</p>
 <p>网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。</p>
-<p>1.打开 apache 安装目录，找到 httpd.conf 这个文件<br></p>
+<p>1.打开 apache 安装目录，找到 httpd.conf 这个文件<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.1.png" alt="python3.6+wamp配置python脚本环境（Windows）.1.png" title=""></p>
 <p>拷贝一份，防止不成功！！！（万一不成功还可以恢复到原始状态）</p>
 <p>接下来用 notpad++ 或者 sublime text 之类的文本编辑器打开</p>
 <p>2.找到这一行</p>
@@ -443,16 +438,14 @@ function data2str(data) {
 <pre><code>Options Indexes FollowSymLinks
 </code></pre><p> 在这一句后面添加 </p>
 <pre><code>ExecCGI
-</code></pre><p>为了防止找错位置，放上截图<br></p>
+</code></pre><p>为了防止找错位置，放上截图<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.2.png" alt="python3.6+wamp配置python脚本环境（Windows）.2.png" title=""></p>
 <p>注意对比前后文是否一致。</p>
 <p>4.找到这一行</p>
 <pre><code>AddHandler cgi-script .cgi
 </code></pre><p>在后面添加</p>
 <pre><code>.py
-</code></pre>
-<ol start="5">
-<li>ctrl + s 保存，重启服务器</li>
-</ol>
+</code></pre><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.3.png" alt="python3.6+wamp配置python脚本环境（Windows）.3.png" title="">
+<p>5.ctrl + s 保存，重启服务器</p>
 <p>6.测试，在 wamp/www 这个目录下建立 test.py 文件，写入以下代码</p>
 <pre><code>#!D:\Python\Python36\python.exe
 print(&quot;Content-type:text/html\n&quot;)
@@ -462,9 +455,9 @@ print(&apos;hello world&apos;)
 <p>第三行打印空行（此处可以和第二行合并，及在第二行末尾加入换行符 ‘ \n’）</p>
 <p>第四行开始编写脚本</p>
 <p>7.浏览器地址框输入<a href="http://127.0.0.1/test.py，回车" target="_blank" rel="external">http://127.0.0.1/test.py，回车</a></p>
-<p>8.如果网页如下所示，即配置成功。<br></p>
+<p>8.如果网页如下所示，即配置成功。<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.4.png" alt="python3.6+wamp配置python脚本环境（Windows）.4.png" title=""></p>
 <p>我修改过端口地址，自定义了文件夹，所以地址可能有所不同。</p>
-<p>9.如果页面如下，将test.py的内容全部输出<br><br>那么说明配置失败，请检查以上步骤是否有错误或遗漏，python地址是否正确。</p>
+<p>9.如果页面如下，将test.py的内容全部输出<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.5.png" alt="python3.6+wamp配置python脚本环境（Windows）.5.png" title=""><br>那么说明配置失败，请检查以上步骤是否有错误或遗漏，python地址是否正确。</p>
 
       
 
@@ -1112,17 +1105,15 @@ console.log(son.lastName);
 <p>断开式：http 协议每次响应完成后，会断开与客户端的连接</p>
 <p>无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系</p>
 <p>②内容格式：消息头和消息体</p>
-<p>http请求方法<br>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。</p>
-<p>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD 方法。</p>
-<p>HTTP1.1 新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
-<table><br><tr><br><th>序号</th><br><th>方法</th><br><th>描述</th><br></tr><br><tr><br><td>1</td><td>GET</td><td>请求指定的页面信息，并返回实体主体。</td><br></tr><br><tr><br><td>2</td><td>HEAD</td><td>类似于 get 请求，只不过返回的响应中没有具体的内容，用于获取报头</td><br></tr><br><tr><br><td>3</td><td>POST</td><td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和 / 或已有资源的修改。</td><br></tr><br><tr><br><td>4</td><td>PUT</td><td>从客户端向服务器传送的数据取代指定的文档的内容。</td><br></tr><br><tr><br><td>5</td><td>DELETE</td><td>请求服务器删除指定的页面。</td><br></tr><br><tr><br><td>6</td><td>CONNECT</td><td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td><br></tr><br><tr><br><td>7</td><td>OPTIONS</td><td>允许客户端查看服务器的性能。</td><br></tr><br><tr><br><td>8</td><td>TRACE</td><td>回显服务器收到的请求，主要用于测试或诊断。</td><br></tr><br></table>
+<p>http请求方法<br>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。<br>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD 方法。<br>HTTP1.1 新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<table><tr><th>序号</th><th>方法</th><th>描述</th></tr><tr><td>1</td><td>GET</td><td>请求指定的页面信息，并返回实体主体。</td></tr><tr><td>2</td><td>HEAD</td><td>类似于 get 请求，只不过返回的响应中没有具体的内容，用于获取报头</td></tr><tr><td>3</td><td>POST</td><td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和 / 或已有资源的修改。</td></tr><tr><td>4</td><td>PUT</td><td>从客户端向服务器传送的数据取代指定的文档的内容。</td><br></tr><tr><td>5</td><td>DELETE</td><td>请求服务器删除指定的页面。</td></tr><br><tr><td>6</td><td>CONNECT</td><td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td></tr><tr><td>7</td><td>OPTIONS</td><td>允许客户端查看服务器的性能。</td><br></tr><tr><td>8</td><td>TRACE</td><td>回显服务器收到的请求，主要用于测试或诊断。</td><br></tr></table>
 
 <p>注意：</p>
 <p>1）方法名称是区分大小写的，当某个请求所针对的资源不支持对应的请求方法的时候，服务器应当返回状态码 405（Mothod Not Allowed）；当服务器不认识或者不支持对应的请求方法时，应返回状态码 501（Not Implemented）。</p>
 <p>2）HTTP 服务器至少应该实现 GET 和 HEAD/POST 方法，其他方法都是可选的，此外除上述方法，特定的 HTTP 服务器支持扩展自定义的方法。</p>
 <p>get 和 post 区别<br>面试中一般会问到这个问题</p>
 <p>区别：</p>
-<table><br><tr><br><th>方法</th><th>数据量</th><th>携带方式</th><br></tr><br><tr><br><td>get</td><td>请求无消息体，只能携带少量数据</td><td>请求将数据放在 url 地址中</td><br></tr><br><tr><br><td>post</td><td>请求有消息体，可以携带大量数据</td><td>请求将数据放在消息体中</td><br></tr><br></table>
+<table><tr><th>方法</th><th>数据量</th><th>携带方式</th></tr><br><tr><td>get</td><td>请求无消息体，只能携带少量数据</td><td>请求将数据放在 url 地址中</td></tr><tr><td>post</td><td>请求有消息体，可以携带大量数据</td><td>请求将数据放在消息体中</td></tr></table>
 
 
 <p>GET 请求请提交的数据放置在 HTTP 请求协议头中，而 POST 提交的数据则放在实体数据中；<br>GET 方式提交的数据最多只能有 1024 字节，而 POST 则没有此限制。</p>
@@ -1210,19 +1201,19 @@ console.log(son.lastName);
 
 
   
-    <article id="post-python-操作-Excel-表格文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python 操作 Excel 表格文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/python-操作-Excel-表格文件/">python 操作 Excel 表格文件</a>
+      <a class="article-title" href="/2018/07/25/python 操作 Excel 表格文件/">python 操作 Excel 表格文件</a>
     </h1>
   
 
         
-        <a href="/2018/07/25/python-操作-Excel-表格文件/" class="archive-article-date">
+        <a href="/2018/07/25/python 操作 Excel 表格文件/" class="archive-article-date">
   	<time datetime="2018-07-25T10:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
 </a>
         
@@ -1234,12 +1225,9 @@ console.log(son.lastName);
 <h1 id="一、读取Excel表格"><a href="#一、读取Excel表格" class="headerlink" title="一、读取Excel表格"></a>一、读取Excel表格</h1><p>这里我们用到 xlrd 模块（Excel read）</p>
 <h3 id="1-导入-xlrd-模块"><a href="#1-导入-xlrd-模块" class="headerlink" title="1.导入 xlrd 模块"></a>1.导入 xlrd 模块</h3><pre><code>import xlrd
 </code></pre><h3 id="2-打开-Excel-文件"><a href="#2-打开-Excel-文件" class="headerlink" title="2.打开 Excel 文件"></a>2.打开 Excel 文件</h3><pre><code>workbook = xlrd.open_workbook(&apos;example.xlsx&apos;)
-</code></pre><p>###3.获取所有 sheet 表格，例如表格名为 Sheet1###</p>
-<pre><code>sheet_names = workbook.sheet_names()
-</code></pre><p>###4.获取其中一个表格###</p>
-<pre><code>sheet1 = workbook.sheet_by_name(sheet_name)
-</code></pre><p>###5.按行读取###</p>
-<pre><code>for row_index in range(0, sheet1.nrows):
+</code></pre><h3 id="3-获取所有-sheet-表格，例如表格名为-Sheet1"><a href="#3-获取所有-sheet-表格，例如表格名为-Sheet1" class="headerlink" title="3.获取所有 sheet 表格，例如表格名为 Sheet1"></a>3.获取所有 sheet 表格，例如表格名为 Sheet1</h3><pre><code>sheet_names = workbook.sheet_names()
+</code></pre><h3 id="4-获取其中一个表格"><a href="#4-获取其中一个表格" class="headerlink" title="4.获取其中一个表格"></a>4.获取其中一个表格</h3><pre><code>sheet1 = workbook.sheet_by_name(sheet_name)
+</code></pre><h3 id="5-按行读取"><a href="#5-按行读取" class="headerlink" title="5.按行读取"></a>5.按行读取</h3><pre><code>for row_index in range(0, sheet1.nrows):
     dataSet.append(sheet1.row_values(row_index))
     print(row_values(row_index))
 </code></pre><p>所以读取一个完整 Excel 文件的程序为</p>
@@ -1257,16 +1245,11 @@ for sheet_name in sheet_names:
         dataSet.append(sheet1.row_values(row_index))
 print(dataSet)
 </code></pre><h1 id="二、创建并填写-Excel-表格"><a href="#二、创建并填写-Excel-表格" class="headerlink" title="二、创建并填写 Excel 表格"></a>二、创建并填写 Excel 表格</h1><p>我们用到 xlwt 模块（Excel write）</p>
-<p>###1.导入xlwt模块###</p>
-<pre><code>import xlwt
-</code></pre><p>###2.创建工作簿###</p>
-<pre><code>workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
-</code></pre><p>###3.创建表###</p>
-<pre><code>sheet = workbook.add_sheet(&apos;Sheet1&apos;) #创建一个名叫Sheet1的表
-</code></pre><p>###4.写入数据###</p>
-<pre><code>sheet.write(row_index,column_index,data) # row_index是行数，column_index是列数，data是要写入的数据
-</code></pre><p>###5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）###</p>
-<pre><code>workbook.save(&apos;data.xls&apos;)
+<h3 id="1-导入xlwt模块"><a href="#1-导入xlwt模块" class="headerlink" title="1.导入xlwt模块"></a>1.导入xlwt模块</h3><pre><code>import xlwt
+</code></pre><h3 id="2-创建工作簿"><a href="#2-创建工作簿" class="headerlink" title="2.创建工作簿"></a>2.创建工作簿</h3><pre><code>workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
+</code></pre><h3 id="3-创建表"><a href="#3-创建表" class="headerlink" title="3.创建表"></a>3.创建表</h3><pre><code>sheet = workbook.add_sheet(&apos;Sheet1&apos;) #创建一个名叫Sheet1的表
+</code></pre><h3 id="4-写入数据"><a href="#4-写入数据" class="headerlink" title="4.写入数据"></a>4.写入数据</h3><pre><code>sheet.write(row_index,column_index,data) # row_index是行数，column_index是列数，data是要写入的数据
+</code></pre><h3 id="5-保存文件（注意，此处保存为后缀名为-xlsx-文件可能报错）"><a href="#5-保存文件（注意，此处保存为后缀名为-xlsx-文件可能报错）" class="headerlink" title="5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）"></a>5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）</h3><pre><code>workbook.save(&apos;data.xls&apos;)
 </code></pre><p>完整的写表程序是</p>
 <pre><code>import xlwt
 
@@ -1298,7 +1281,7 @@ workbook.save(&apos;data.xls&apos;)
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/25/python-操作-Excel-表格文件/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/25/python 操作 Excel 表格文件/">展开全文 >></a>
         </p>
       
 
@@ -1376,6 +1359,10 @@ workbook.save(&apos;data.xls&apos;)
       	</div>
     </div>
   </div>
+  <script src="live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+    false && L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"http://localhost:4000/live2dw/koharu.model.json"},"display":{"position":"right","width":80,"height":180},"mobile":{"show":false}});
+  </script>
 </footer>
     </div>
     <script>
@@ -1452,23 +1439,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -1485,6 +1464,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
