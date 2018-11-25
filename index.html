@@ -46,6 +46,7 @@ ga('send', 'pageview');
   
 
   <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" href="dist/APlayer.min.css">
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
@@ -118,7 +119,6 @@ ga('send', 'pageview');
 	</header>
 
 	<div id='player'>
-			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
 			<script src="js/0.js"></script>
@@ -990,6 +990,7 @@ ga('send', 'pageview');
   <script src="live2dw/lib/L2Dwidget.min.js"></script>
   <script>
     false && L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"http://localhost:4000/live2dw/koharu.model.json"},"display":{"position":"right","width":80,"height":180},"mobile":{"show":false}});
+    true && _love(window,document);
   </script>
 </footer>
     </div>
