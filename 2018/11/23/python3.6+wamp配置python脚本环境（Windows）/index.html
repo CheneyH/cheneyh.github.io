@@ -9,22 +9,22 @@
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
   <title>python3.6 + wamp 配置 python 脚本环境（Windows） | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。 1.打开 apache 安装目">
+  <meta name="description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。">
 <meta name="keywords" content="python,apache,WampServer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python3.6 + wamp 配置 python 脚本环境（Windows）">
 <meta property="og:url" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。 1.打开 apache 安装目">
+<meta property="og:description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.1.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.2.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.3.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.4.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.5.png">
-<meta property="og:updated_time" content="2018-11-24T15:17:38.874Z">
+<meta property="og:updated_time" content="2018-11-25T06:59:30.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3.6 + wamp 配置 python 脚本环境（Windows）">
-<meta name="twitter:description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。 1.打开 apache 安装目">
+<meta name="twitter:description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。">
 <meta name="twitter:image" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.1.png">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
@@ -60,7 +60,7 @@ ga('send', 'pageview');
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
-  <link rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" href="css/0.css">
   <!-- Google ads -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -76,7 +76,9 @@ ga('send', 'pageview');
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #cfe8ff"></div>
+<div class="overlay" style="background: #cfe8ff">
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -130,7 +132,7 @@ ga('send', 'pageview');
 			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
-			<script src="js/my-aplayer.js"></script>
+			<script src="js/0.js"></script>
 	</div>
 </div>
 
@@ -219,6 +221,7 @@ ga('send', 'pageview');
         <p>最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。</p>
 <p>wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。</p>
 <p>网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。</p>
+<a id="more"></a>
 <p>1.打开 apache 安装目录，找到 httpd.conf 这个文件<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.1.png" alt="python3.6+wamp配置python脚本环境（Windows）.1.png" title=""></p>
 <p>拷贝一份，防止不成功！！！（万一不成功还可以恢复到原始状态）</p>
 <p>接下来用 notpad++ 或者 sublime text 之类的文本编辑器打开</p>

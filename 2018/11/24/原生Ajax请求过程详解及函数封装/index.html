@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
   <title>原生Ajax请求过程详解及函数封装 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="近期在学习 ajax 技术，这里记录一下学习的收获。 Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。 一、ajax的几个步骤要想利用ajax进行数据请求，需要以下几个步骤 1.创建XMLHttpRequest">
+  <meta name="description" content="近期在学习 ajax 技术，这里记录一下学习的收获。 Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。">
 <meta name="keywords" content="javascript,ajax,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原生Ajax请求过程详解及函数封装">
 <meta property="og:url" content="https://cheneyh.github.io/2018/11/24/原生Ajax请求过程详解及函数封装/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="近期在学习 ajax 技术，这里记录一下学习的收获。 Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。 一、ajax的几个步骤要想利用ajax进行数据请求，需要以下几个步骤 1.创建XMLHttpRequest">
-<meta property="og:updated_time" content="2018-11-24T08:36:07.676Z">
+<meta property="og:description" content="近期在学习 ajax 技术，这里记录一下学习的收获。 Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。">
+<meta property="og:updated_time" content="2018-11-25T06:43:31.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原生Ajax请求过程详解及函数封装">
-<meta name="twitter:description" content="近期在学习 ajax 技术，这里记录一下学习的收获。 Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。 一、ajax的几个步骤要想利用ajax进行数据请求，需要以下几个步骤 1.创建XMLHttpRequest">
+<meta name="twitter:description" content="近期在学习 ajax 技术，这里记录一下学习的收获。 Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。 传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
   
@@ -54,7 +54,7 @@ ga('send', 'pageview');
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
-  <link rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" href="css/0.css">
   <!-- Google ads -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -70,7 +70,9 @@ ga('send', 'pageview');
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #cfe8ff"></div>
+<div class="overlay" style="background: #cfe8ff">
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -124,7 +126,7 @@ ga('send', 'pageview');
 			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
-			<script src="js/my-aplayer.js"></script>
+			<script src="js/0.js"></script>
 	</div>
 </div>
 
@@ -212,7 +214,7 @@ ga('send', 'pageview');
       
         <p>近期在学习 ajax 技术，这里记录一下学习的收获。</p>
 <p>Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。</p>
-<p>传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。</p>
+<p>传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。<br><a id="more"></a></p>
 <h1 id="一、ajax的几个步骤"><a href="#一、ajax的几个步骤" class="headerlink" title="一、ajax的几个步骤"></a>一、ajax的几个步骤</h1><p>要想利用ajax进行数据请求，需要以下几个步骤</p>
 <h3 id="1-创建XMLHttpRequest对象"><a href="#1-创建XMLHttpRequest对象" class="headerlink" title="1.创建XMLHttpRequest对象"></a>1.创建XMLHttpRequest对象</h3><p>所有现代的浏览器都支持 XMLHttpRequest 对象。而旧版本的IE5、IE6不支持，需要做兼容性。</p>
 <pre><code>var xhr;

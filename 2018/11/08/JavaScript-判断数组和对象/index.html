@@ -9,21 +9,21 @@
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
   <title>JavaScript 判断数组和对象 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。 这里提供三种方法识别数组还是对象。 1. Array.isArray()Array.isArray() 用于确定传递的值是否是一个Array。 2. constructor数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。 3. instanceof补充：A i">
+  <meta name="description" content="有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。 这里提供三种方法识别数组还是对象。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 判断数组和对象">
 <meta property="og:url" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。 这里提供三种方法识别数组还是对象。 1. Array.isArray()Array.isArray() 用于确定传递的值是否是一个Array。 2. constructor数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。 3. instanceof补充：A i">
+<meta property="og:description" content="有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。 这里提供三种方法识别数组还是对象。">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png">
-<meta property="og:updated_time" content="2018-11-24T10:03:41.877Z">
+<meta property="og:updated_time" content="2018-11-25T06:59:58.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 判断数组和对象">
-<meta name="twitter:description" content="有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。 这里提供三种方法识别数组还是对象。 1. Array.isArray()Array.isArray() 用于确定传递的值是否是一个Array。 2. constructor数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。 3. instanceof补充：A i">
+<meta name="twitter:description" content="有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。 这里提供三种方法识别数组还是对象。">
 <meta name="twitter:image" content="https://cheneyh.github.io/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
@@ -59,7 +59,7 @@ ga('send', 'pageview');
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
-  <link rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" href="css/0.css">
   <!-- Google ads -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -75,7 +75,9 @@ ga('send', 'pageview');
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #cfe8ff"></div>
+<div class="overlay" style="background: #cfe8ff">
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -129,7 +131,7 @@ ga('send', 'pageview');
 			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
-			<script src="js/my-aplayer.js"></script>
+			<script src="js/0.js"></script>
 	</div>
 </div>
 
@@ -217,6 +219,7 @@ ga('send', 'pageview');
       
         <p>有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。</p>
 <p>这里提供三种方法识别数组还是对象。</p>
+<a id="more"></a>
 <h2 id="1-Array-isArray"><a href="#1-Array-isArray" class="headerlink" title="1. Array.isArray()"></a>1. Array.isArray()</h2><p>Array.isArray() 用于确定传递的值是否是一个Array。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png" alt="JavaScript-判断数组和对象.1.png" title=""></p>
 <h2 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2. constructor"></a>2. constructor</h2><p>数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png" alt="JavaScript-判断数组和对象.2.png" title=""></p>
 <h2 id="3-instanceof"><a href="#3-instanceof" class="headerlink" title="3. instanceof"></a>3. instanceof</h2><p>补充：A instanceof B 判断A的原型链上是否有B的原型</p>

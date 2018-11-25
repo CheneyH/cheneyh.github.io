@@ -49,7 +49,7 @@ ga('send', 'pageview');
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
-  <link rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" href="css/0.css">
   <!-- Google ads -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -65,7 +65,9 @@ ga('send', 'pageview');
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #cfe8ff"></div>
+<div class="overlay" style="background: #cfe8ff">
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -119,7 +121,7 @@ ga('send', 'pageview');
 			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
-			<script src="js/my-aplayer.js"></script>
+			<script src="js/0.js"></script>
 	</div>
 </div>
 
@@ -209,111 +211,11 @@ ga('send', 'pageview');
       
         <p>近期在学习 ajax 技术，这里记录一下学习的收获。</p>
 <p>Ajax 即 “Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。</p>
-<p>传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。</p>
-<h1 id="一、ajax的几个步骤"><a href="#一、ajax的几个步骤" class="headerlink" title="一、ajax的几个步骤"></a>一、ajax的几个步骤</h1><p>要想利用ajax进行数据请求，需要以下几个步骤</p>
-<h3 id="1-创建XMLHttpRequest对象"><a href="#1-创建XMLHttpRequest对象" class="headerlink" title="1.创建XMLHttpRequest对象"></a>1.创建XMLHttpRequest对象</h3><p>所有现代的浏览器都支持 XMLHttpRequest 对象。而旧版本的IE5、IE6不支持，需要做兼容性。</p>
-<pre><code>var xhr;
-if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-xhr = new XMLHttpRequest();
-}
-else { // code for IE6, IE5
-xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-}
-</code></pre><h3 id="2-设置请求方式和请求地址"><a href="#2-设置请求方式和请求地址" class="headerlink" title="2.设置请求方式和请求地址"></a>2.设置请求方式和请求地址</h3><p>open函数需要三个参数，分别是，请求方式，请求地址，是否异步，一般不建议把第三个参数设为false（毕竟我们用ajax就为了它的异步）。</p>
-<pre><code>xhr.open(&quot;get&quot;, &quot;test.php&quot;, true);
-</code></pre><h3 id="3-发送请求"><a href="#3-发送请求" class="headerlink" title="3.发送请求"></a>3.发送请求</h3><p>简单的get请求只需要执行send函数即可，不需要参数（get的参数写在请求地址中）</p>
-<pre><code>xhr.send();
-</code></pre><p>如果使用post请求，我们需要事先设置请求头，再发送数据</p>
-<pre><code>xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-xhr.send(str);
-</code></pre><p>这里的str是要发送的数据，必须为字符串，而且格式符合 key=value ，多组数据用 &amp; 隔开，例如</p>
-<pre><code>str = &quot;name=cheney&amp;gender=secret&quot;;
-</code></pre><h3 id="4-监听状态变化"><a href="#4-监听状态变化" class="headerlink" title="4.监听状态变化"></a>4.监听状态变化</h3><p>给xhr添加 onreadystatechange 事件监听状态变化，然后通过xhr.readyState判断响应状态。</p>
-<p>存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</p>
-<pre><code>0    请求未初始化
-1    服务器连接已建立
-2    请求已接收
-3    请求处理中
-4    请求已完成，且响应已就绪
-</code></pre><p>只有响应码为4 才说明请求完成。 </p>
-<h3 id="5-处理返回结果"><a href="#5-处理返回结果" class="headerlink" title="5.处理返回结果"></a>5.处理返回结果</h3><p>这里需要通过 xhr.status 判断响应类型，xhr.status 是此次http请求的响应码，当响应码为200到300之间或304（读取缓存）时，说明请求成功。</p>
-<pre><code>xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr === 304) {
-                console.log(&apos;请求成功&apos;);
-            }
-            else {
-                console.log(&apos;请求失败&apos;);
-            }
-        }
-    };
-</code></pre><h3 id="6-接收返回的数据"><a href="#6-接收返回的数据" class="headerlink" title="6.接收返回的数据"></a>6.接收返回的数据</h3><p>ajax是用来异步请求数据的，所以一般会有数据返回。</p>
-<p>返回的数据一般有两种类型，即 xml 和 json 。</p>
-<p>这里就不多介绍 xml 和 json 了，需要了解的请移步百度。</p>
-<p>（1）如果服务端数据返回的是 xml， 例如如下的数据</p>
-<pre><code>&lt;person&gt;
-    &lt;name&gt;张三&lt;/name&gt;
-    &lt;age&gt;18&lt;/age&gt;
-    &lt;sex&gt;male&lt;/sex&gt;
-&lt;/person&gt;
-</code></pre><p>那么我们在前端用 xhr.responseXML 接收，然后按照HTML的dom结构解析即可，例如 getElementsByTagName() 等函数都可以解析，这里就不赘述。</p>
-<p>（2）如果服务端数据返回的是 json， 例如如下的数据</p>
-<pre><code>{&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:&quot;18&quot;,&quot;sex&quot;:&quot;male&quot;}
-</code></pre><p>实际json只是一个特殊格式的字符串，所以我们通过  xhr.responseText 接收，然后利用 JSON.parse() 解析。</p>
-<pre><code>obj = JSON.parse(xhr.responseText);
-</code></pre><p>然后将获取到的数据渲染到页面上。</p>
-<h3 id="7-设置超时中断"><a href="#7-设置超时中断" class="headerlink" title="7.设置超时中断"></a>7.设置超时中断</h3><p>有时候由于服务端或网络问题导致请求事件过长，那么客户端不能一直等待，需要设置超时中断请求。</p>
-<p>只需要在请求开始设置定时器，定时时间到就执行 xhr.abort(); 中断请求。</p>
-<h3 id="8-设置时间戳"><a href="#8-设置时间戳" class="headerlink" title="8.设置时间戳"></a>8.设置时间戳</h3><p>由于低版本浏览器在进行get请求时会认为同一url的返回结果相同，就不能实时返回服务端的结果，而是从缓存中取。所以一般在url中添加时间戳保证每次请求的URL都不同。</p>
-<p>以上7,8两步非必需，只是为了完善这个过程而添加的，读者可以根据自己需要选择。</p>
-<h1 id="二、封装"><a href="#二、封装" class="headerlink" title="二、封装"></a>二、封装</h1><p>最后，我们将这个 ajax 请求的流程封装成方法，便于以后使用。</p>
-<pre><code>function ajax(option) {
-    // method, url, data, timeout, success, error
-    var xhr;
-    var str = data2str(option.data);
-    if (window.XMLHttpRequest) {
-        xhr = new XMLHttpRequest();
-    }
-    else {
-        xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-    }
-    if (option.type.toLowerCase() === &apos;post&apos;) {
-        xhr.open(option.type, option.url, true);
-        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-        xhr.send(str);
-    } else if (option.type.toLowerCase() === &apos;get&apos;) {
-        xhr.open(option.type, option.url + &apos;?&apos; + str, true);
-        xhr.send();
-    }
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            clearTimeout(timer);
-            if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr === 304) {
-                option.success(xhr);
-            }
-            else {
-                option.error(xhr);
-            }
-        }
-    };
-    if (option.timeout) {
-        var timer = setTimeout(function () {
-            xhr.abort();
-            clearTimeout(timer);
-        }, option.timeout)
-    }
-}
-
-// 将对象转化成用于传输的字符串
-function data2str(data) {
-    var res = [];
-    data.t = new Date().getTime();
-    for (var key in data) {
-        res.push(encodeURIComponent(key) + &apos;=&apos; + encodeURIComponent(data[key]));
-    }
-    return res.join(&apos;&amp;&apos;);
-}
-</code></pre>
+<p>传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。<br>
+        
+          <!--<a class="article-more-a" href="/2018/11/24/原生Ajax请求过程详解及函数封装/#more">more >></a>-->
+                <p>......</p>
+        
       
 
       
@@ -428,37 +330,10 @@ function data2str(data) {
         <p>最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。</p>
 <p>wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。</p>
 <p>网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。</p>
-<p>1.打开 apache 安装目录，找到 httpd.conf 这个文件<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.1.png" alt="python3.6+wamp配置python脚本环境（Windows）.1.png" title=""></p>
-<p>拷贝一份，防止不成功！！！（万一不成功还可以恢复到原始状态）</p>
-<p>接下来用 notpad++ 或者 sublime text 之类的文本编辑器打开</p>
-<p>2.找到这一行</p>
-<pre><code>LoadModule cgi_module modules/mod_cgi.so
-</code></pre><p>如果行首有#注释，删去#；如果没有这一行就添加。</p>
-<p>3.找到这一行</p>
-<pre><code>Options Indexes FollowSymLinks
-</code></pre><p> 在这一句后面添加 </p>
-<pre><code>ExecCGI
-</code></pre><p>为了防止找错位置，放上截图<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.2.png" alt="python3.6+wamp配置python脚本环境（Windows）.2.png" title=""></p>
-<p>注意对比前后文是否一致。</p>
-<p>4.找到这一行</p>
-<pre><code>AddHandler cgi-script .cgi
-</code></pre><p>在后面添加</p>
-<pre><code>.py
-</code></pre><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.3.png" alt="python3.6+wamp配置python脚本环境（Windows）.3.png" title="">
-<p>5.ctrl + s 保存，重启服务器</p>
-<p>6.测试，在 wamp/www 这个目录下建立 test.py 文件，写入以下代码</p>
-<pre><code>#!D:\Python\Python36\python.exe
-print(&quot;Content-type:text/html\n&quot;)
-print(&apos;hello world&apos;)
-</code></pre><p>第一行以注释方式指定本机 python 的绝对地址</p>
-<p>第二行打印 Content-type:text/html</p>
-<p>第三行打印空行（此处可以和第二行合并，及在第二行末尾加入换行符 ‘ \n’）</p>
-<p>第四行开始编写脚本</p>
-<p>7.浏览器地址框输入<a href="http://127.0.0.1/test.py，回车" target="_blank" rel="external">http://127.0.0.1/test.py，回车</a></p>
-<p>8.如果网页如下所示，即配置成功。<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.4.png" alt="python3.6+wamp配置python脚本环境（Windows）.4.png" title=""></p>
-<p>我修改过端口地址，自定义了文件夹，所以地址可能有所不同。</p>
-<p>9.如果页面如下，将test.py的内容全部输出<br><img src="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.5.png" alt="python3.6+wamp配置python脚本环境（Windows）.5.png" title=""><br>那么说明配置失败，请检查以上步骤是否有错误或遗漏，python地址是否正确。</p>
-
+        
+          <!--<a class="article-more-a" href="/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/#more">more >></a>-->
+                <p>......</p>
+        
       
 
       
@@ -572,15 +447,10 @@ print(&apos;hello world&apos;)
       
         <p>有时候，我们需要识别一个变量是数组还是对象，例如进行深拷贝时。</p>
 <p>这里提供三种方法识别数组还是对象。</p>
-<h2 id="1-Array-isArray"><a href="#1-Array-isArray" class="headerlink" title="1. Array.isArray()"></a>1. Array.isArray()</h2><p>Array.isArray() 用于确定传递的值是否是一个Array。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.1.png" alt="JavaScript-判断数组和对象.1.png" title=""></p>
-<h2 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2. constructor"></a>2. constructor</h2><p>数组的构造函数是Array()，而对象的构造函数是Object()。所以我们判断一个变量是数组还是对象可以查看它的构造函数。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.2.png" alt="JavaScript-判断数组和对象.2.png" title=""></p>
-<h2 id="3-instanceof"><a href="#3-instanceof" class="headerlink" title="3. instanceof"></a>3. instanceof</h2><p>补充：A instanceof B 判断A的原型链上是否有B的原型</p>
-<p>比如 数组[1,2]的原型链上有Array和Object，所以[1,2] instanceof Array，[1,2] instanceof Object都会返回true</p>
-<p>而对象{‘a’:123}的原型链上只有Object，所以{‘a’:123} instanceof Array会返回false，而{‘a’:123} instanceof Object会返回true</p>
-<p>所以我们判断一个变量是数组还是对象可以查看它的原型链上是否有Array。<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.3.png" alt="JavaScript-判断数组和对象.3.png" title=""></p>
-<h2 id="4-Object-prototype-toString-call"><a href="#4-Object-prototype-toString-call" class="headerlink" title="4. Object.prototype.toString.call()"></a>4. Object.prototype.toString.call()</h2><p>通过改变toString函数中this的指向，判断参数的类型<br><br><img src="/2018/11/08/JavaScript-判断数组和对象/JavaScript-判断数组和对象.4.png" alt="JavaScript-判断数组和对象.4.png" title=""></p>
-<p>注意：在跨域判断时，instanceof 会失效，toString 方法有效</p>
-
+        
+          <!--<a class="article-more-a" href="/2018/11/08/JavaScript-判断数组和对象/#more">more >></a>-->
+                <p>......</p>
+        
       
 
       
@@ -684,104 +554,11 @@ print(&apos;hello world&apos;)
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、原型"><a href="#一、原型" class="headerlink" title="一、原型"></a>一、原型</h1><p>JavaScript 原型是构造函数所构造对象的模板。</p>
-<p>例如：</p>
-<pre><code>function Person(name,age,sex){
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
-}
-Person.prototype.hair = &apos;black&apos;;
-Person.prototype.skin = &apos;yellow&apos;;
-
-var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
-</code></pre><p>那么person为<img src="/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.1.png" alt="JavaScript-的原型和原型链.1.png" title=""></p>
-<p>可以看到 person 具有的显式属性只有 name, age, sex，那如果我们访问 person.skin 和 person.hair 会怎么样呢？<br><img src="/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.2.png" alt="JavaScript-的原型和原型链.2.png" title=""></p>
-<p>由于 person 自身没有设置 hair 和 skin 属性，那么访问时系统就会查找它的原型中的属性。</p>
-<p>我们可以这样理解，prototype 是 DNA，其中有这个种族共有的特性，比如我们的黑头发黄皮肤是刻在DNA中的，不需要后期赋值就具有的属性。</p>
-<p>在查看 person 时，我们发现它有一个__proto__属性，在 chrome 控制台呈浅粉色，访问它<br><img src="/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.3.png" alt="JavaScript-的原型和原型链.3.png" title=""></p>
-<p>这种以双下划线开头和结尾的变量一般为系统赋予的隐式变量，即系统不希望被修改的属性（当然，如果你想修改，它也没办法）。</p>
-<p>__proto__指向了构造函数的原型，即构造这个对象的模板</p>
-<p>实际上在构造函数中，系统隐式地添加了这一句</p>
-<pre><code>this.__proto__ = Person.prototype;
-</code></pre><p>person.__proto__和Person.prototype指向同一块内存，而那块内存保存着模板信息，即</p>
-<pre><code>this.__proto__ = Person.prototype = {
-    hair: &apos;black&apos;,
-    skin: &apos;yellow&apos;
-}
-</code></pre><p>至此，我们知道，构造函数的prototype为一个对象，这个对象保存着构造新对象时所用的模板信息，在构造新对象时，系统隐式地给对象赋予一个__proto__属性，并将构造函数的prototype的值传给它（传递的是上面代码中对象的地址）。访问生成的新对象的属性时，会优先访问该对象自己的属性值，如果该对象没有这个属性，就查找__proto__中的属性。</p>
-<hr>
-<p>以下为题目，供理解参考</p>
-<pre><code>// Q1
-function Person(name,age,sex){
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
-    this.__proto__ = Person.prototype;
-  }
-Person.prototype.hair = &apos;black&apos;;
-Person.prototype.skin = &apos;yellow&apos;;
-
-var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
-Person.prototype.hair = &apos;yellow&apos;;
-console.log(person.hair);
-// A1: yellow
-
-/********分割线，以下代码与以上代码无关********/
-
-// Q2
-function Person(name,age,sex){
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
-    this.__proto__ = Person.prototype;
-  }
-Person.prototype.hair = &apos;black&apos;;
-Person.prototype.skin = &apos;yellow&apos;;
-
-var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
-Person.prototype = {
-    hair: yellow
-}
-console.log(person.hair);
-// A2: black
-/********分割线，以下代码与以上代码无关********/
-
-// Q3
-function Person(name,age,sex){
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
-    this.__proto__ = Person.prototype;
-  }
-Person.prototype.hair = &apos;black&apos;;
-Person.prototype.skin = &apos;yellow&apos;;
-Person.prototype = {
-    hair: yellow
-}
-var person = new Person(&apos;Cheney&apos;,23,&apos;male&apos;);
-
-console.log(person.hair);
-// A3: yellow
-</code></pre><p>*注意prototype传递给__proto__为地址传递，即可解决以上问题</p>
-<h1 id="二、原型链"><a href="#二、原型链" class="headerlink" title="二、原型链"></a>二、原型链</h1><p>接下来谈一下原型链。</p>
-<pre><code>Grand.prototype.lastName = &quot;Smith&quot;;
-function Grand(){}
-var grand = new Grand();
-
-Father.prototype = grand;
-function Father(){}
-var father = new Father();
-
-Son.prototype = father;
-function Son(){}
-var son = new Son();
-
-console.log(son.lastName);
-</code></pre><p>执行以上的语句</p>
-<p>我们说过，访问生成的新对象的属性时，会优先访问该对象自己的属性值，如果该对象没有这个属性，就查找__proto__中的属性。</p>
-<p>son自己的属性里找不到lastName，就去son.__proto__里找，即father，而father的属性中也找不到lastName，那么继续向上，转向father.__proto__中查找，同理……最后终于在grand.__proto__中找到，这样原型连成链的结构称为原型链。</p>
-
+        <p>JavaScript 原型和原型链是面试中常见的问题，而其底层原理是很难理解的。</p>
+        
+          <!--<a class="article-more-a" href="/2018/11/02/JavaScript-的原型和原型链/#more">more >></a>-->
+                <p>......</p>
+        
       
 
       
@@ -885,114 +662,11 @@ console.log(son.lastName);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。</p>
-<p>有时候我们需要做出下图的效果<br><br></p>
-<p>下方为缩略图，上面是大图，点击缩略图可以查看大图。</p>
-<p>1.float布局<br>CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。</p>
-<pre><code>&lt;head&gt;
-&lt;style&gt;
-        .main {
-            margin: 0 auto;
-        }
-
-        ul {
-            padding: 0;
-            width: 800px;
-            height: 80px;
-        }
-
-        ul li a img {
-            width: 100px;
-            height: 60px;
-        }
-
-        li {
-            list-style-type: none;
-            float: left;
-            margin: -10px 7px;
-        }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class=&quot;main&quot; style=&quot;width: 800px;height: 600px;&quot;&gt;
-    &lt;img id=&quot;big_img&quot; src=&quot;images/壁纸/18000.jpg&quot; alt=&quot;&quot;&gt;
-    &lt;ul id=&quot;bz&quot;&gt;
-        &lt;li&gt;
-            &lt;a href=&quot;images/壁纸/18000.jpg&quot;&gt;
-                &lt;img src=&quot;images/壁纸/18000.jpg&quot; alt=&quot;&quot;&gt;
-            &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a href=&quot;images/壁纸/18001.jpg&quot;&gt;
-                &lt;img src=&quot;images/壁纸/18001.jpg&quot; alt=&quot;&quot;&gt;
-            &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a href=&quot;images/壁纸/18002.jpg&quot;&gt;
-                &lt;img src=&quot;images/壁纸/18002.jpg&quot; alt=&quot;&quot;&gt;
-            &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a href=&quot;images/壁纸/18003.jpg&quot;&gt;
-                &lt;img src=&quot;images/壁纸/18003.jpg&quot; alt=&quot;&quot;&gt;
-            &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a href=&quot;images/壁纸/18004.jpg&quot;&gt;
-                &lt;img src=&quot;images/壁纸/18004.jpg&quot; alt=&quot;&quot;&gt;
-            &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a href=&quot;images/壁纸/18005.jpg&quot;&gt;
-                &lt;img src=&quot;images/壁纸/18005.jpg&quot; alt=&quot;&quot;&gt;
-            &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a href=&quot;images/壁纸/18006.jpg&quot;&gt;
-                &lt;img src=&quot;images/壁纸/18006.jpg&quot; alt=&quot;&quot;&gt;
-            &lt;/a&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><p>设置li标签float属性为left，即左浮动，使图片在同一行显示，再设置间距等细节即可完成效果。</p>
-<p>2.flex布局<br>这是今天重点要说的。首先我们了解一下什么是flex布局。</p>
-<p>Flex 是 Flexible Box 的缩写，翻译成中文就是 “弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为 Flex 布局。布局的传统解决方案，基于盒状模型，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。2009 年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
-<p>以上这段话是网上复制的，可以很明确地告诉我们：<br><br><strong>1.flex布局不同于传统盒子模型的布局<br><br>2.不需要再考虑兼容性问题</strong><br></p>
-
-<p> 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称” 容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称” 项目”。</p>
-<p>在这个案例中，如果将ul设置为flex容器，那么每个li对象都是flex item。</p>
-<p>将上面的代码中style部分改成：</p>
-<pre><code>&lt;style&gt;
-        .main{
-            margin: 0 auto;
-        }
-
-        #big_img {
-            width: 800px;
-            height: 500px;
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-items: center;
-            align-items: center;
-        }
-        li {
-            list-style-type: none;
-            margin: 10px 7px;
-        }
-
-        ul li a img {
-            width: 100px;
-            height: 60px;
-        }
-&lt;/style&gt;
-</code></pre><p> 即可实现相同的效果</p>
-<p>最后配合JavaScript可以实现点击缩略图更换大图的效果。</p>
-
+        <p>今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。<br><img src="/2018/08/31/HTML+CSS%20相册简单布局/HTML+CSS相册简单布局.1.jpg" alt="HTML+CSS相册简单布局.1.jpg" title=""></p>
+        
+          <!--<a class="article-more-a" href="/2018/08/31/HTML+CSS 相册简单布局/#more">more >></a>-->
+                <p>......</p>
+        
       
 
       
@@ -1100,24 +774,11 @@ console.log(son.lastName);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天笔试选择题问到HTTP请求方法，一时间想不起来，所以来总结一下。</p>
-<p>http协议特点<br>①通信流程：断开式（无状态）</p>
-<p>断开式：http 协议每次响应完成后，会断开与客户端的连接</p>
-<p>无状态：由于服务器断开了之前的连接，就无法知晓连接间的关系</p>
-<p>②内容格式：消息头和消息体</p>
-<p>http请求方法<br>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。<br>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD 方法。<br>HTTP1.1 新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
-<table><tr><th>序号</th><th>方法</th><th>描述</th></tr><tr><td>1</td><td>GET</td><td>请求指定的页面信息，并返回实体主体。</td></tr><tr><td>2</td><td>HEAD</td><td>类似于 get 请求，只不过返回的响应中没有具体的内容，用于获取报头</td></tr><tr><td>3</td><td>POST</td><td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和 / 或已有资源的修改。</td></tr><tr><td>4</td><td>PUT</td><td>从客户端向服务器传送的数据取代指定的文档的内容。</td><br></tr><tr><td>5</td><td>DELETE</td><td>请求服务器删除指定的页面。</td></tr><br><tr><td>6</td><td>CONNECT</td><td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td></tr><tr><td>7</td><td>OPTIONS</td><td>允许客户端查看服务器的性能。</td><br></tr><tr><td>8</td><td>TRACE</td><td>回显服务器收到的请求，主要用于测试或诊断。</td><br></tr></table>
-
-<p>注意：</p>
-<p>1）方法名称是区分大小写的，当某个请求所针对的资源不支持对应的请求方法的时候，服务器应当返回状态码 405（Mothod Not Allowed）；当服务器不认识或者不支持对应的请求方法时，应返回状态码 501（Not Implemented）。</p>
-<p>2）HTTP 服务器至少应该实现 GET 和 HEAD/POST 方法，其他方法都是可选的，此外除上述方法，特定的 HTTP 服务器支持扩展自定义的方法。</p>
-<p>get 和 post 区别<br>面试中一般会问到这个问题</p>
-<p>区别：</p>
-<table><tr><th>方法</th><th>数据量</th><th>携带方式</th></tr><br><tr><td>get</td><td>请求无消息体，只能携带少量数据</td><td>请求将数据放在 url 地址中</td></tr><tr><td>post</td><td>请求有消息体，可以携带大量数据</td><td>请求将数据放在消息体中</td></tr></table>
-
-
-<p>GET 请求请提交的数据放置在 HTTP 请求协议头中，而 POST 提交的数据则放在实体数据中；<br>GET 方式提交的数据最多只能有 1024 字节，而 POST 则没有此限制。</p>
-
+        <p>HTTP是一个基于TCP/IP通信协议来传递数据，包括html文件、图像、结果等，即是一个客户端和服务器端请求和应答的标准。</p>
+        
+          <!--<a class="article-more-a" href="/2018/08/21/HTTP协议及请求方法/#more">more >></a>-->
+                <p>......</p>
+        
       
 
       
@@ -1222,43 +883,10 @@ console.log(son.lastName);
     <div class="article-entry" itemprop="articleBody">
       
         <p>python 作为一种高效的代码，通常用来处理重复繁琐的工作，读写 Excel 表格就是一种，今天我们总结一下如何用 python 处理 Excel 文件。</p>
-<h1 id="一、读取Excel表格"><a href="#一、读取Excel表格" class="headerlink" title="一、读取Excel表格"></a>一、读取Excel表格</h1><p>这里我们用到 xlrd 模块（Excel read）</p>
-<h3 id="1-导入-xlrd-模块"><a href="#1-导入-xlrd-模块" class="headerlink" title="1.导入 xlrd 模块"></a>1.导入 xlrd 模块</h3><pre><code>import xlrd
-</code></pre><h3 id="2-打开-Excel-文件"><a href="#2-打开-Excel-文件" class="headerlink" title="2.打开 Excel 文件"></a>2.打开 Excel 文件</h3><pre><code>workbook = xlrd.open_workbook(&apos;example.xlsx&apos;)
-</code></pre><h3 id="3-获取所有-sheet-表格，例如表格名为-Sheet1"><a href="#3-获取所有-sheet-表格，例如表格名为-Sheet1" class="headerlink" title="3.获取所有 sheet 表格，例如表格名为 Sheet1"></a>3.获取所有 sheet 表格，例如表格名为 Sheet1</h3><pre><code>sheet_names = workbook.sheet_names()
-</code></pre><h3 id="4-获取其中一个表格"><a href="#4-获取其中一个表格" class="headerlink" title="4.获取其中一个表格"></a>4.获取其中一个表格</h3><pre><code>sheet1 = workbook.sheet_by_name(sheet_name)
-</code></pre><h3 id="5-按行读取"><a href="#5-按行读取" class="headerlink" title="5.按行读取"></a>5.按行读取</h3><pre><code>for row_index in range(0, sheet1.nrows):
-    dataSet.append(sheet1.row_values(row_index))
-    print(row_values(row_index))
-</code></pre><p>所以读取一个完整 Excel 文件的程序为</p>
-<pre><code>#encoding utf-8
-import xlrd
-
-workbook = xlrd.open_workbook(&apos;example.xlsx&apos;)
-sheet_names = workbook.sheet_names()
-dataSet = []
-for sheet_name in sheet_names:
-    sheet1 = workbook.sheet_by_name(sheet_name)
-    labels = sheet1.row_values(0)  #第一行标题
-    print(sheet1.nrows)
-    for row_index in range(1, sheet1.nrows):
-        dataSet.append(sheet1.row_values(row_index))
-print(dataSet)
-</code></pre><h1 id="二、创建并填写-Excel-表格"><a href="#二、创建并填写-Excel-表格" class="headerlink" title="二、创建并填写 Excel 表格"></a>二、创建并填写 Excel 表格</h1><p>我们用到 xlwt 模块（Excel write）</p>
-<h3 id="1-导入xlwt模块"><a href="#1-导入xlwt模块" class="headerlink" title="1.导入xlwt模块"></a>1.导入xlwt模块</h3><pre><code>import xlwt
-</code></pre><h3 id="2-创建工作簿"><a href="#2-创建工作簿" class="headerlink" title="2.创建工作簿"></a>2.创建工作簿</h3><pre><code>workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
-</code></pre><h3 id="3-创建表"><a href="#3-创建表" class="headerlink" title="3.创建表"></a>3.创建表</h3><pre><code>sheet = workbook.add_sheet(&apos;Sheet1&apos;) #创建一个名叫Sheet1的表
-</code></pre><h3 id="4-写入数据"><a href="#4-写入数据" class="headerlink" title="4.写入数据"></a>4.写入数据</h3><pre><code>sheet.write(row_index,column_index,data) # row_index是行数，column_index是列数，data是要写入的数据
-</code></pre><h3 id="5-保存文件（注意，此处保存为后缀名为-xlsx-文件可能报错）"><a href="#5-保存文件（注意，此处保存为后缀名为-xlsx-文件可能报错）" class="headerlink" title="5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）"></a>5.保存文件（注意，此处保存为后缀名为 .xlsx 文件可能报错）</h3><pre><code>workbook.save(&apos;data.xls&apos;)
-</code></pre><p>完整的写表程序是</p>
-<pre><code>import xlwt
-
-workbook = xlwt.Workbook(encoding=&apos;ascii&apos;)
-sheet = workbook.add_sheet(&apos;Sheet1&apos;)
-for index in range(0,len(datas)):
-    sheet.write(index,0,datas[index])
-workbook.save(&apos;data.xls&apos;)
-</code></pre>
+        
+          <!--<a class="article-more-a" href="/2018/07/25/python 操作 Excel 表格文件/#more">more >></a>-->
+                <p>......</p>
+        
       
 
       

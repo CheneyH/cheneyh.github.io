@@ -9,20 +9,20 @@
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
   <title>JavaScript 的原型和原型链 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、原型JavaScript 原型是构造函数所构造对象的模板。 例如： function Person(name,age,sex){     this.name = name;     this.age = age;     this.sex = sex; } Person.prototype.hair = &amp;apos;black&amp;apos;; Person.prototype.skin = &amp;a">
+  <meta name="description" content="JavaScript 原型和原型链是面试中常见的问题，而其底层原理是很难理解的。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 的原型和原型链">
 <meta property="og:url" content="https://cheneyh.github.io/2018/11/02/JavaScript-的原型和原型链/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="一、原型JavaScript 原型是构造函数所构造对象的模板。 例如： function Person(name,age,sex){     this.name = name;     this.age = age;     this.sex = sex; } Person.prototype.hair = &amp;apos;black&amp;apos;; Person.prototype.skin = &amp;a">
+<meta property="og:description" content="JavaScript 原型和原型链是面试中常见的问题，而其底层原理是很难理解的。">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.1.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.2.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.3.png">
-<meta property="og:updated_time" content="2018-11-24T09:17:11.827Z">
+<meta property="og:updated_time" content="2018-11-25T07:36:15.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 的原型和原型链">
-<meta name="twitter:description" content="一、原型JavaScript 原型是构造函数所构造对象的模板。 例如： function Person(name,age,sex){     this.name = name;     this.age = age;     this.sex = sex; } Person.prototype.hair = &amp;apos;black&amp;apos;; Person.prototype.skin = &amp;a">
+<meta name="twitter:description" content="JavaScript 原型和原型链是面试中常见的问题，而其底层原理是很难理解的。">
 <meta name="twitter:image" content="https://cheneyh.github.io/2018/11/02/JavaScript-的原型和原型链/JavaScript-的原型和原型链.1.png">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
@@ -58,7 +58,7 @@ ga('send', 'pageview');
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
-  <link rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" href="css/0.css">
   <!-- Google ads -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -74,7 +74,9 @@ ga('send', 'pageview');
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #cfe8ff"></div>
+<div class="overlay" style="background: #cfe8ff">
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -128,7 +130,7 @@ ga('send', 'pageview');
 			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
-			<script src="js/my-aplayer.js"></script>
+			<script src="js/0.js"></script>
 	</div>
 </div>
 
@@ -214,7 +216,9 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、原型"><a href="#一、原型" class="headerlink" title="一、原型"></a>一、原型</h1><p>JavaScript 原型是构造函数所构造对象的模板。</p>
+        <p>JavaScript 原型和原型链是面试中常见的问题，而其底层原理是很难理解的。</p>
+<a id="more"></a>
+<h1 id="一、原型"><a href="#一、原型" class="headerlink" title="一、原型"></a>一、原型</h1><p>JavaScript 原型是构造函数所构造对象的模板。</p>
 <p>例如：</p>
 <pre><code>function Person(name,age,sex){
     this.name = name;

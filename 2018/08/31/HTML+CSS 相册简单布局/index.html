@@ -9,17 +9,20 @@
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
   <title>HTML+CSS 相册简单布局 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。 有时候我们需要做出下图的效果 下方为缩略图，上面是大图，点击缩略图可以查看大图。 1.float布局CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。 &amp;lt;head&amp;gt; &amp;lt;style&amp;gt;         .main {             marg">
+  <meta name="description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。">
 <meta name="keywords" content="html,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML+CSS 相册简单布局">
 <meta property="og:url" content="https://cheneyh.github.io/2018/08/31/HTML+CSS 相册简单布局/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。 有时候我们需要做出下图的效果 下方为缩略图，上面是大图，点击缩略图可以查看大图。 1.float布局CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。 &amp;lt;head&amp;gt; &amp;lt;style&amp;gt;         .main {             marg">
-<meta property="og:updated_time" content="2018-11-24T10:04:08.248Z">
+<meta property="og:description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。">
+<meta property="og:image" content="https://cheneyh.github.io/2018/08/31/HTML+CSS%20相册简单布局/HTML+CSS相册简单布局.1.jpg">
+<meta property="og:image" content="https://cheneyh.github.io/2018/08/31/HTML+CSS%20相册简单布局/HTML+CSS相册简单布局.2.jpg">
+<meta property="og:updated_time" content="2018-11-25T07:11:49.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML+CSS 相册简单布局">
-<meta name="twitter:description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。 有时候我们需要做出下图的效果 下方为缩略图，上面是大图，点击缩略图可以查看大图。 1.float布局CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。 &amp;lt;head&amp;gt; &amp;lt;style&amp;gt;         .main {             marg">
+<meta name="twitter:description" content="今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。">
+<meta name="twitter:image" content="https://cheneyh.github.io/2018/08/31/HTML+CSS%20相册简单布局/HTML+CSS相册简单布局.1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
   
@@ -54,7 +57,7 @@ ga('send', 'pageview');
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/clicklove.js"></script>
   <!-- 自定义样式 -->
-  <link rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" href="css/0.css">
   <!-- Google ads -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -70,7 +73,9 @@ ga('send', 'pageview');
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #cfe8ff"></div>
+<div class="overlay" style="background: #cfe8ff">
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -124,7 +129,7 @@ ga('send', 'pageview');
 			<link rel="stylesheet" href="dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script src="dist/APlayer.js"></script>
-			<script src="js/my-aplayer.js"></script>
+			<script src="js/0.js"></script>
 	</div>
 </div>
 
@@ -210,9 +215,10 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。</p>
-<p>有时候我们需要做出下图的效果<br><br></p>
-<p>下方为缩略图，上面是大图，点击缩略图可以查看大图。</p>
+        <p>今天在教程中看到flex布局的例子，之前没有接触过，所以晚上来总结一下。<br><img src="/2018/08/31/HTML+CSS%20相册简单布局/HTML+CSS相册简单布局.1.jpg" alt="HTML+CSS相册简单布局.1.jpg" title=""></p>
+<a id="more"></a>
+<p>有时候我们需要做出上面的效果<br></p>
+<p>即下方为缩略图，上方是大图，点击缩略图可以查看大图。</p>
 <p>1.float布局<br>CSS中的float属性很强大，可以在一行放置多个块级元素，很适合多个div并列的情况，当然，也适合这种。</p>
 <pre><code>&lt;head&gt;
 &lt;style&gt;
@@ -284,7 +290,7 @@ ga('send', 'pageview');
 <p>2.flex布局<br>这是今天重点要说的。首先我们了解一下什么是flex布局。</p>
 <p>Flex 是 Flexible Box 的缩写，翻译成中文就是 “弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为 Flex 布局。布局的传统解决方案，基于盒状模型，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。2009 年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
 <p>以上这段话是网上复制的，可以很明确地告诉我们：<br><br><strong>1.flex布局不同于传统盒子模型的布局<br><br>2.不需要再考虑兼容性问题</strong><br></p>
-
+<img src="/2018/08/31/HTML+CSS%20相册简单布局/HTML+CSS相册简单布局.2.jpg" alt="HTML+CSS相册简单布局.2.jpg" title="">
 <p> 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称” 容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称” 项目”。</p>
 <p>在这个案例中，如果将ul设置为flex容器，那么每个li对象都是flex item。</p>
 <p>将上面的代码中style部分改成：</p>
