@@ -19,7 +19,9 @@
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/28/detach与remove/detach与remove.1.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/28/detach与remove/detach与remove.2.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/28/detach与remove/detach与remove.3.png">
+<meta property="og:image" content="https://cheneyh.github.io/2018/11/28/detach与remove/detach与remove.4.png">
 <meta property="og:image" content="https://cheneyh.github.io/2018/11/28/detach与remove/detach与remove.5.png">
+<meta property="og:image" content="https://cheneyh.github.io/2018/11/28/detach与remove/detach与remove.6.png">
 <meta property="og:updated_time" content="2018-11-28T11:40:22.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="detach()与remove()">
@@ -265,9 +267,9 @@ ga('send', 'pageview');
 <pre><code>$(&apos;.remove&apos;).click(function () {
     $btn = $(&apos;.test&apos;).detach();
 });
-</code></pre><p>点击“按钮3”，button 响应 click 事件。<br></p>
+</code></pre><p>点击“按钮3”，button 响应 click 事件。<br><img src="/2018/11/28/detach与remove/detach与remove.4.png" alt="detach与remove.4.png" title=""></p>
 <p>点击 “按钮1” 后，内部的 “按钮3” 被移除。<br><img src="/2018/11/28/detach与remove/detach与remove.5.png" alt="detach与remove.5.png" title=""></p>
-<p>再点击 “按钮2” ，“按钮3” 重新被添加到页面中，点击“按钮3”，button 响应 click 事件，说明 “按钮3” 的绑定事件被保留。<br><br>（点击按钮试一试）</p>
+<p>再点击 “按钮2” ，“按钮3” 重新被添加到页面中，点击“按钮3”，button 响应 click 事件，说明 “按钮3” 的绑定事件被保留。<br><img src="/2018/11/28/detach与remove/detach与remove.6.png" alt="detach与remove.6.png" title=""><br>（点击按钮试一试）</p>
 <p><button class="btn2" title="点击试一试">试一试</button></p>
 <p><script><br>    $(“.btn2”).click(function(){<br>        var newwin = window.open(‘’, “_blank”, ‘’);<br>        newwin.document.open(‘text/html’, ‘replace’);<br>        newwin.opener = null;<br>        newwin.document.write(“<button class='remove'>按钮1</button> <button class='append'>按钮2</button> <button class='test'>按钮3</button><script src='https://code.jquery.com/jquery-1.12.4.min.js'>&lt;\/script&gt;<script>$(function () {var $btn;$(‘.test’).click(function () {console.log(‘YEAH!!我的click事件还在’);});$(‘.remove’).click(function () {$btn = $(‘.test’).detach();});$(‘.append’).click(function () {$btn.appendTo($(‘body’));});});alert(‘请打开开发者工具查看控制台输出’);&lt;\/script&gt;”);<br>        newwin.document.close();<br>    })<br></script></p>
 <style>
@@ -536,6 +538,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
@@ -548,22 +558,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
@@ -573,6 +567,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">WampServer</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
             <div class="clearfix"></div>
