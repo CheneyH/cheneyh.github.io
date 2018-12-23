@@ -7,14 +7,19 @@
   <meta name="google-site-verification" content="weqLwQAfGE_0VBtPYL-Za1RWTLutJNUMhu_vk2w5yhQ" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
-  <title>Archives: 2018/7 | Cheney 的博客</title>
+  <title>一个正则表达式题目引发的思考 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cheney 的博客">
-<meta property="og:url" content="https://cheneyh.github.io/archives/2018/07/index.html">
+  <meta name="description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 table{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:">
+<meta name="keywords" content="正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个正则表达式题目引发的思考">
+<meta property="og:url" content="https://cheneyh.github.io/2018/12/13/一个正则表达式题目引发的思考/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
+<meta property="og:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 table{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:">
+<meta property="og:updated_time" content="2018-12-23T02:11:28.726Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cheney 的博客">
+<meta name="twitter:title" content="一个正则表达式题目引发的思考">
+<meta name="twitter:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 table{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
   
@@ -187,60 +192,220 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-一个正则表达式题目引发的思考" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/25/python 操作 Excel 表格文件/" class="archive-article-date">
-  	<time datetime="2018-07-25T10:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/25/python 操作 Excel 表格文件/">python 操作 Excel 表格文件</a>
+    <h1 class="article-title" itemprop="name">
+      一个正则表达式题目引发的思考
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/12/13/一个正则表达式题目引发的思考/" class="archive-article-date">
+  	<time datetime="2018-12-13T07:52:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>发现一个练习正则表达式的网站，分享给大家<br><a href="https://alf.nu/RegexGolf" target="_blank" rel="external">Regex Golf</a><br><br>这里面有一道abba的题，题目是这样的</p>
+<p><style><br>table{<br>width:100%;<br>border:none;<br>text-align:center;<br>}<br>b{<br>border-radius: 3px;<br>border-bottom: 1px solid black;<br>}<br>i{<br>border:1px solid #ccc;<br>padding:0 5px;<br>background:#f9f9f9;<br>}<br>.col-md-0 div{<br>border:solid 1px #ccc;<br>padding-left:20%;<br>height:30px;<br>line-height:30px;<br>text-align:left;<br>overflow:hidden;<br>}<br>.col-md-0 td{<br>width:50%;<br>padding:0;<br>}<br></style></p>
+<table><br>    <tr><br>        <th>Match all of these…</th><br>        <th>and none of these…</th><br>    </tr><br>    <tr><td>acritan</td><td>abba</td></tr><br>    <tr><td>aesthophysiology</td><td>anallagmatic</td></tr><br>    <tr><td>amphimictical</td><td>bassarisk</td></tr><br>    <tr><td>baruria</td><td>chorioallantois</td></tr><br>    <tr><td>calomorphic</td><td>coccomyces</td></tr><br>    <tr><td>disarmature</td><td>commotive</td></tr><br>    <tr><td>effusive</td><td>engrammatic</td></tr><br><a id="more"></a><br>    <tr><td>fluted</td><td>glossoscopia</td></tr><br>    <tr><td>fusoid</td><td>hexacoralla</td></tr><br>    <tr><td>goblinize</td><td>hippogriffin</td></tr><br>    <tr><td>nihilistic</td><td>inflammableness</td></tr><br>    <tr><td>noisefully</td><td>otto</td></tr><br>    <tr><td>picrorhiza</td><td>overattached</td></tr><br>    <tr><td>postarytenoid</td><td>saffarid</td></tr><br>    <tr><td>revolutionize</td><td>sarraceniaceae</td></tr><br>    <tr><td>suprasphanoidal</td><td>scillipicrin</td></tr><br>    <tr><td>suspenseful</td><td>tlapallan</td></tr><br>    <tr><td>tapachula</td><td>trillion</td></tr><br>    <tr><td>transmit</td><td>unclassably</td></tr><br>    <tr><td>unversatile</td><td>unfitting</td></tr><br>    <tr><td>vibetoite</td><td>unsmelled</td></tr><br></table>
+
+<p>通过分析得知，第二列的字符串中都含有形如abba格式的子串，例如 an<b>alla</b>gmatic，infl<b>amma</b>bleness 等等。既然得知了匹配规律，那开始写正则表达式吧。<br><br>唰唰唰<del>~<br><br>搞定</del><br></p>
+<pre><code>/(\w)(\w)\2\1/g
+</code></pre><p>当我沾沾自喜的时候，发现事情并不简单，测试不通过，再仔细看，原来是匹配不包含abba格式的字符串。<br><br>换个写法试试：</p>
+<pre><code>/[^((\w)(\w)\2\1)]/
+</code></pre><p>结果还是不行，原来<i>^</i>号表示不接受该字符集合，而题目中的复杂逻辑不适用。<br><br>然后想到正则表达式有断言的查找方法。<br>即 <i>?=</i>,<i>?!</i>,<i>?&lt;=</i>,<i>?&lt;!=</i>。</p>
+<table class="col-md-0"><br><td><br><div>前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?=exp2</i>)</div><br><div>后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;=exp2</i>)exp1</div><br><div>负前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?!exp2</i>)</div><br><div>负后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;!=exp2</i>)exp1</div><br></td><br><td><br><div>查找exp2前面的exp1</div><br><div>查找exp2后面的exp1</div><br><div>查找后面不是exp2的exp1</div><br><div>查找前面不是exp2的exp1</div><br></td><br></table>
+
+<p>1.&nbsp;&nbsp;?=<br><br>匹配后跟exp2的exp1，但不返回exp2<br><br>例如：<br></p>
+<pre><code>var reg = /a(?=bc)/;
+console.log(&quot;ababc&quot;.match(reg));
+</code></pre><p>会打印出</p>
+<pre><code>[&quot;a&quot;, index: 2, input: &quot;ababc&quot;, groups: undefined]
+</code></pre><p>说明匹配到的是索引为2的a，即bc前面的a。</p>
+<p>2.&nbsp;&nbsp;?&lt;=<br><br>匹配前有exp2的exp1，但不返回exp2<br><br>例如：</p>
+<pre><code>var reg = /(?&lt;=ab)c/;
+console.log(&quot;acabc&quot;.match(reg));
+</code></pre><p>会打印出</p>
+<pre><code>[&quot;c&quot;, index: 4, input: &quot;acabc&quot;, groups: undefined]
+</code></pre><p>说明匹配到的是索引为4的c，即ab后面的c。</p>
+<p>3.&nbsp;&nbsp;?!<br><br>匹配后面不是exp2的exp1，但不会返回exp2<br><br>例如：<br></p>
+<pre><code>var reg = /a(?!bc)/;
+console.log(&quot;abcab&quot;.match(reg));
+</code></pre><p>会打印出</p>
+<pre><code>[&quot;a&quot;, index: 3, input: &quot;abcab&quot;, groups: undefined]
+</code></pre><p>说明匹配到的是索引为3的a，即非bc前面的a。</p>
+<p>4.&nbsp;&nbsp;?&lt;!<br><br>匹配后面不是exp2的exp1，但不会返回exp2<br><br>例如：<br></p>
+<pre><code>var reg = /(?&lt;!ab)c/;
+console.log(&quot;abcac&quot;.match(reg));
+</code></pre><p>会打印出</p>
+<pre><code>[&quot;c&quot;, index: 4, input: &quot;abcac&quot;, groups: undefined]
+</code></pre><p>说明匹配到的是索引为4的c，即非ab后面的c。</p>
+<p>再回到上面的题目，匹配不包含 <b>abba</b> 格式的字符串。那就好办了。</p>
+<pre><code>var reg = /^(?!(.)+(.)\2\1)/g;
+console.log(reg.test(&quot;aesthophysiology&quot;)); //true
+console.log(reg.test(&quot;anallagmatic&quot;)); // false
+</code></pre><p>如果上面的断言语法理解了的话，这个正则表达式就不难理解。<br><br>同理，<code>/^(?!.*(.)(.)\2\1)/g</code> 也符合<br><br>这括号里的点可以换成 <i>\w</i><br><br>不过，为什么不用 <code>/^.*(?!(.)(.)\2\1)/g</code> 呢？<br><br>这里涉及到正则表达式的匹配机制，贪婪匹配。<br><br><code>/^.*(?!(.)(.)\2\1)/g</code>第一个点是通配符，会匹配所有能匹配的字符，所以整个字符串都符合<i>.*</i>，再往后查找 <b>abba</b> 就查不到了。<br></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cheneyh.github.io/2018/12/13/一个正则表达式题目引发的思考/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/11/28/detach与remove/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          detach()与remove()
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .info{display:none}
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment v"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script async="">
+    window.onload = function() {
+        new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: false,
+            verify: true,
+            app_id: "ig52RtR2cJes2U4V7tim3RRk-9Nh9j0Va",
+            app_key: "b1tCA0Y9Yrjwdv44Mu9BFSRr",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            avatar: "",
+            avatar_cdn: "https://sdn.geekzu.org/avatar/",
+            pageSize: "15"
+        });
+        document.getElementsByClassName('vpreview-btn')[0].innerText = "预览";
+    }
+</script>
+  </section>
 
 
           </div>
@@ -268,8 +433,8 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
