@@ -9,17 +9,17 @@
   <link rel="dns-prefetch" href="https://cheneyh.github.io">
   <title>一个正则表达式题目引发的思考 | Cheney 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 table{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:">
+  <meta name="description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 .table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;backg">
 <meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个正则表达式题目引发的思考">
 <meta property="og:url" content="https://cheneyh.github.io/2018/12/13/一个正则表达式题目引发的思考/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 table{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:">
-<meta property="og:updated_time" content="2018-12-23T02:11:28.726Z">
+<meta property="og:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 .table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;backg">
+<meta property="og:updated_time" content="2018-12-23T02:19:06.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个正则表达式题目引发的思考">
-<meta name="twitter:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 table{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:">
+<meta name="twitter:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 .table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;backg">
   
     <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
   
@@ -213,15 +213,8 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>发现一个练习正则表达式的网站，分享给大家<br><a href="https://alf.nu/RegexGolf" target="_blank" rel="external">Regex Golf</a><br><br>这里面有一道abba的题，题目是这样的</p>
-<p><style><br>table{<br>width:100%;<br>border:none;<br>text-align:center;<br>}<br>b{<br>border-radius: 3px;<br>border-bottom: 1px solid black;<br>}<br>i{<br>border:1px solid #ccc;<br>padding:0 5px;<br>background:#f9f9f9;<br>}<br>.col-md-0 div{<br>border:solid 1px #ccc;<br>padding-left:20%;<br>height:30px;<br>line-height:30px;<br>text-align:left;<br>overflow:hidden;<br>}<br>.col-md-0 td{<br>width:50%;<br>padding:0;<br>}<br></style></p>
-<table><br>    <tr><br>        <th>Match all of these…</th><br>        <th>and none of these…</th><br>    </tr><br>    <tr><td>acritan</td><td>abba</td></tr><br>    <tr><td>aesthophysiology</td><td>anallagmatic</td></tr><br>    <tr><td>amphimictical</td><td>bassarisk</td></tr><br>    <tr><td>baruria</td><td>chorioallantois</td></tr><br>    <tr><td>calomorphic</td><td>coccomyces</td></tr><br>    <tr><td>disarmature</td><td>commotive</td></tr><br>    <tr><td>effusive</td><td>engrammatic</td></tr><br><a id="more"></a><br>    <tr><td>fluted</td><td>glossoscopia</td></tr><br>    <tr><td>fusoid</td><td>hexacoralla</td></tr><br>    <tr><td>goblinize</td><td>hippogriffin</td></tr><br>    <tr><td>nihilistic</td><td>inflammableness</td></tr><br>    <tr><td>noisefully</td><td>otto</td></tr><br>    <tr><td>picrorhiza</td><td>overattached</td></tr><br>    <tr><td>postarytenoid</td><td>saffarid</td></tr><br>    <tr><td>revolutionize</td><td>sarraceniaceae</td></tr><br>    <tr><td>suprasphanoidal</td><td>scillipicrin</td></tr><br>    <tr><td>suspenseful</td><td>tlapallan</td></tr><br>    <tr><td>tapachula</td><td>trillion</td></tr><br>    <tr><td>transmit</td><td>unclassably</td></tr><br>    <tr><td>unversatile</td><td>unfitting</td></tr><br>    <tr><td>vibetoite</td><td>unsmelled</td></tr><br></table>
-
-<p>通过分析得知，第二列的字符串中都含有形如abba格式的子串，例如 an<b>alla</b>gmatic，infl<b>amma</b>bleness 等等。既然得知了匹配规律，那开始写正则表达式吧。<br><br>唰唰唰<del>~<br><br>搞定</del><br></p>
-<pre><code>/(\w)(\w)\2\1/g
-</code></pre><p>当我沾沾自喜的时候，发现事情并不简单，测试不通过，再仔细看，原来是匹配不包含abba格式的字符串。<br><br>换个写法试试：</p>
-<pre><code>/[^((\w)(\w)\2\1)]/
-</code></pre><p>结果还是不行，原来<i>^</i>号表示不接受该字符集合，而题目中的复杂逻辑不适用。<br><br>然后想到正则表达式有断言的查找方法。<br>即 <i>?=</i>,<i>?!</i>,<i>?&lt;=</i>,<i>?&lt;!=</i>。</p>
-<table class="col-md-0"><br><td><br><div>前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?=exp2</i>)</div><br><div>后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;=exp2</i>)exp1</div><br><div>负前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?!exp2</i>)</div><br><div>负后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;!=exp2</i>)exp1</div><br></td><br><td><br><div>查找exp2前面的exp1</div><br><div>查找exp2后面的exp1</div><br><div>查找后面不是exp2的exp1</div><br><div>查找前面不是exp2的exp1</div><br></td><br></table>
+<p><style><br>.table-md-0{<br>width:100%;<br>border:none;<br>text-align:center;<br>}<br>b{<br>border-radius: 3px;<br>border-bottom: 1px solid black;<br>}<br>i{<br>border:1px solid #ccc;<br>padding:0 5px;<br>background:#f9f9f9;<br>}<br>.col-md-0 div{<br>border:solid 1px #ccc;<br>padding-left:20%;<br>height:30px;<br>line-height:30px;<br>text-align:left;<br>overflow:hidden;<br>}<br>.col-md-0 td{<br>width:50%;<br>padding:0;<br>}<br></style></p>
+<table class="table-md-0"><br>    <tr><br>        <th>Match all of these…</th><br>        <th>and none of these…</th><br>    </tr><br>    <tr><td>acritan</td><td>abba</td></tr><br>    <tr><td>aesthophysiology</td><td>anallagmatic</td></tr><br>    <tr><td>amphimictical</td><td>bassarisk</td></tr><br>    <tr><td>baruria</td><td>chorioallantois</td></tr><br>    <tr><td>calomorphic</td><td>coccomyces</td></tr><br>    <tr><td>disarmature</td><td>commotive</td></tr><br>    <tr><td>effusive</td><td>engrammatic</td></tr><br>    <tr><td>fluted</td><td>glossoscopia</td></tr><br>    <tr><td>fusoid</td><td>hexacoralla</td></tr><br>    <tr><td>goblinize</td><td>hippogriffin</td></tr><br>    <tr><td>nihilistic</td><td>inflammableness</td></tr><br>    <tr><td>noisefully</td><td>otto</td></tr><br>    <tr><td>picrorhiza</td><td>overattached</td></tr><br>    <tr><td>postarytenoid</td><td>saffarid</td></tr><br>    <tr><td>revolutionize</td><td>sarraceniaceae</td></tr><br>    <tr><td>suprasphanoidal</td><td>scillipicrin</td></tr><br>    <tr><td>suspenseful</td><td>tlapallan</td></tr><br>    <tr><td>tapachula</td><td>trillion</td></tr><br>    <tr><td>transmit</td><td>unclassably</td></tr><br>    <tr><td>unversatile</td><td>unfitting</td></tr><br>    <tr><td>vibetoite</td><td>unsmelled</td></tr><br></table><br><a id="more"></a><br><br>通过分析得知，第二列的字符串中都含有形如abba格式的子串，例如 an<b>alla</b>gmatic，infl<b>amma</b>bleness 等等。既然得知了匹配规律，那开始写正则表达式吧。<br><br>唰唰唰<del>~<br><br>搞定</del><br><br><br>    /(\w)(\w)\2\1/g<br>当我沾沾自喜的时候，发现事情并不简单，测试不通过，再仔细看，原来是匹配不包含abba格式的字符串。<br><br>换个写法试试：<br><br>    /[^((\w)(\w)\2\1)]/<br>结果还是不行，原来<i>^</i>号表示不接受该字符集合，而题目中的复杂逻辑不适用。<br><br>然后想到正则表达式有断言的查找方法。<br>即 <i>?=</i>,<i>?!</i>,<i>?&lt;=</i>,<i>?&lt;!=</i>。<br><table class="col-md-0"><br><td><br><div>前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?=exp2</i>)</div><br><div>后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;=exp2</i>)exp1</div><br><div>负前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?!exp2</i>)</div><br><div>负后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;!=exp2</i>)exp1</div><br></td><br><td><br><div>查找exp2前面的exp1</div><br><div>查找exp2后面的exp1</div><br><div>查找后面不是exp2的exp1</div><br><div>查找前面不是exp2的exp1</div><br></td><br></table>
 
 <p>1.&nbsp;&nbsp;?=<br><br>匹配后跟exp2的exp1，但不返回exp2<br><br>例如：<br></p>
 <pre><code>var reg = /a(?=bc)/;
@@ -507,10 +500,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
@@ -519,7 +508,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -528,6 +517,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
             
               <li class="article-tag-list-item">
