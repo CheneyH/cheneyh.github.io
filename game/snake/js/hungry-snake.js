@@ -85,7 +85,6 @@
 
                 // 吃东西
                 var indexOfFood = self.food.indexOf(self.body[0]);
-                console.log(indexOfFood, self.food);
                 if (indexOfFood === -1) {
                     self.position.pop();
                     self.body.pop();
@@ -103,8 +102,6 @@
                 } else {
                     callback();
                 }
-
-                console.log(speed);
             }, 500 - 40 * speed);
         }
     };

@@ -12,8 +12,7 @@ $(function () {
     var food_img = new Image();
     food_img.src = "source/strawberry.png";
     var speed = 1;
-    console.log(document.cookie.split(":"));
-    var maxScore = parseInt(document.cookie.split("=")[1]) || 0;
+    var maxScore = getCookie("m_s") || 0;
 
     gameover.onload = function () {
         initEvent();
@@ -167,5 +166,10 @@ $(function () {
                 speed = $(this).text();
             });
         })
+    }
+
+    function getCookie(key) {
+        var arr, reg=new RegExp("(^| )"+key+"=([^;]*)(;|$)");
+        return (arr=document.cookie.match(reg))?unescape(arr[2]):null;
     }
 });
