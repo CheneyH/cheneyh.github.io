@@ -1,0 +1,40 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+html,body{
+	width: 100%;
+	height: 100%;
+	background: #4fcbf0;
+}
+
+.contain{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.contain .item{
+	width: 20%;
+	display: block;
+	margin: 50px 30px;
+	background: #fff;
+	float: left;
+}
+
+.contain .item:hover{
+	box-shadow: 0 0 10px #fff;
+}
+
+.contain img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.contain p{
+	text-indent: 2em;
+	font-size: 16px;
+	line-height: 40px;
+}

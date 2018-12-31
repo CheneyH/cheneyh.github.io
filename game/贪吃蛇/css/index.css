@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+}
+
+html,body{
+    width: 100%;
+    min-width: 800px;
+    min-height: 500px;
+    height: 100%;
+    background-color: rgba(204, 232, 207,.2);
+}
+
+.contain{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.main{
+    width: 240px;
+    height: 100%;
+    float: right;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    position: relative;
+}
+
+.contain a{
+    display: block;
+    width: 90px;
+    margin: 60px auto 0 auto;
+    box-shadow: 0 1px 10px #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.contain span{
+    display: block;
+    width: 70px;
+    padding: 5px 10px;
+    color: white;
+}
+
+.level.disabled span{
+    background: #ccc;
+    cursor: default;
+}
+
+.levels{
+    width: 90px;
+    margin: 0 auto;
+    box-shadow: 0 1px 10px #ccc;
+    display: none;
+    overflow: hidden;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.levels li{
+    width: 70px;
+    background: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.levels li.cur{
+    background: #4fcbf0;
+    color: white;
+}
+
+.levels li:hover{
+    background: #f7f7f7;
+}
+
+.main p{
+    width: 100%;
+    position: absolute;
+    bottom: 70px;
+}
+
+.start span{
+    background: #25ae88;
+}
+
+.restart span{
+    background: #F05E1C;
+}
+
+.level span{
+    background: #4fcbf0;
+}
+
+.contain a:hover{
+    opacity: .8;
+}
+
+.level span:hover{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+canvas{
+    margin-top: 20px;
+}
