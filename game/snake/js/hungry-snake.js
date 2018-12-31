@@ -51,6 +51,7 @@
         path: [],
         snakeTimer: null,
         move: function (speed, callback, over) {
+            clearInterval(self.snakeTimer);
             var self = this;
             this.snakeTimer = setInterval(function () {
                 if (self.paused) return false;
