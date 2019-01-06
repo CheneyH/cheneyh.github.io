@@ -37,16 +37,16 @@ $(function () {
     function initBackground() {
         cxt.fillStyle = "rgba(200,200,200,0.1)";
         cxt.fillRect(0, 0, mapW * 20, mapH * 20);
+        cxt.fillStyle = "#fff";
         for (var i = 0; i < mapW; i++) {
             for (var j = 0; j < mapH; j++) {
-                cxt.fillStyle = "#fff";
                 cxt.fillRect(i * 20 + 1, j * 20 + 1, 18, 18);
             }
         }
         cxt.fillStyle = "rgba(0,0,133,0.3)";
         cxt.font = "15px 微软雅黑";
         cxt.fillText("贪吃蛇小游戏", 10, 30);
-        cxt.fillText("@Cheney", mapW * 20 - 76, mapH * 20 - 6);
+        // cxt.fillText("@Cheney", mapW * 20 - 76, mapH * 20 - 6);
     }
 
     function initSnake() {
