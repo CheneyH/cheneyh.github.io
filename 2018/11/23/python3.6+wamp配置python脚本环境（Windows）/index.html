@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="renderer" content="webkit">
-  <meta name="google-site-verification" content="weqLwQAfGE_0VBtPYL-Za1RWTLutJNUMhu_vk2w5yhQ" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://cheneyh.github.io">
-  <title>python3.6 + wamp 配置 python 脚本环境（Windows） | Cheney 的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。">
+    <meta charset="utf-8">
+    
+    <meta name="renderer" content="webkit">
+    <meta name="google-site-verification" content="weqLwQAfGE_0VBtPYL-Za1RWTLutJNUMhu_vk2w5yhQ"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="dns-prefetch" href="https://cheneyh.github.io">
+    <title>
+        python3.6 + wamp 配置 python 脚本环境（Windows） |
+        
+        Cheney 的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。">
 <meta name="keywords" content="python,apache,WampServer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python3.6 + wamp 配置 python 脚本环境（Windows）">
@@ -26,20 +29,20 @@
 <meta name="twitter:title" content="python3.6 + wamp 配置 python 脚本环境（Windows）">
 <meta name="twitter:description" content="最近学到 ajax，教程里需要用到 wamp，这里就不介绍 wamp 了。 wamp 包含了 apache 服务器，但其默认只支持php脚本，而本人没有深入学习过 php，所以希望降低学习成本，于是决定动手修改 apache 配置文件。 网上有很多修改的教程，但我尝试了很多种都不尽人意，可能是教程描述不清，修改的位置不对，这里将我最后成功的方法写出来，以备诸位参考。">
 <meta name="twitter:image" content="https://cheneyh.github.io/2018/11/23/python3.6+wamp配置python脚本环境（Windows）/python3.6+wamp配置python脚本环境（Windows）.1.png">
-  
-    <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/favicon.ico">
-  
-  <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
-  <style type="text/css">
-  
-    #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
-    }
-  </style>
-  
+    
+        <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+    <style type="text/css">
+        
+        #container.show {
+            background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+        }
+    </style>
+    
 <!-- Google Analytics -->
 <script type="text/javascript">
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -54,22 +57,22 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 
 
-  
+    
 
-  <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
-  <link rel="stylesheet" href="/dist/APlayer.min.css">
-  <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="/js/clicklove.js"></script>
-  <!-- 自定义样式 -->
-  <link rel="stylesheet" href="/css/0.css">
-  <!-- Google ads -->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6058078482956223",
-    enable_page_level_ads: true
-  });
-</script>
+    <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="/dist/APlayer.min.css">
+    <!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/js/clicklove.js"></script>
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="/css/0.css">
+    <!-- Google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6058078482956223",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 
 <body>
@@ -516,15 +519,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -540,14 +543,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">WampServer</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
             
@@ -557,6 +552,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">WampServer</a>
               </li>
             
             <div class="clearfix"></div>

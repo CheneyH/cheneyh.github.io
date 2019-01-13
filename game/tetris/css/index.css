@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.contain{
+    width: 100%;
+    height: 100%;
+    background: rgba(204, 232, 207,1);
+}
+
+.main{
+    width: 400px;
+    min-width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+    border-radius: 15px;
+    border: solid 2px rgba(255,255,255,.7);
+    background: #bbbbbb;
+    box-shadow: 10px 10px 10px #ccc;
+    position: relative;
+    font-size: 12px;
+}
+
+.screen{
+    position: absolute;
+    left: 50%;
+    margin-left: -140px;
+    background: #9ead86;
+    border: 5px solid;
+    border-color: #a2a2a2 #d6d6d6 #dcdcdc #9e9e9e;
+}
+
+.main div{
+    position: absolute;
+    text-align: center;
+}
+
+.main div a:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 3px 6px hsla(0,0%,100%,.8);
+}
+
+.main div a:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,.8);
+}
+
+.main div a:active:after{
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,.6);
+}
+
+.main div a:active:before{
+    box-shadow: inset 0 3px 6px hsla(0,0%,100%,.6);
+}
+
+.pause a,.sound a,.reset a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background: #2dc421;
+}
+
+.reset a{
+    background: #dd1a1a;
+}
+
+.pause,.sound,.reset{
+    width: 35px;
+    height: 35px;
+}
+
+.pause{
+    left: 50px;
+    bottom: 160px;
+}
+
+.sound{
+    left: 110px;
+    bottom: 160px;
+}
+
+.reset{
+    left: 170px;
+    bottom: 160px;
+}
+
+.drop{
+    width: 100px;
+    height: 100px;
+    left: 80px;
+    bottom: 20px;
+}
+
+.drop a,.rotate a,.left a,.right a,.down a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #5a65f1;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.rotate,.left,.right,.down{
+    width: 60px;
+    height: 60px;
+}
+
+.rotate{
+    right: 80px;
+    bottom: 150px;
+}
+
+.rotate span{
+    position: absolute;
+    right: -30px;
+    bottom: 50%;
+}
+
+.left{
+    right: 140px;
+    bottom: 90px;
+}
+
+.right{
+    right: 20px;
+    bottom: 90px;
+}
+
+.down{
+    right: 80px;
+    bottom: 30px;
+}
