@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    height: 100%;
+}
+
+.top-bar{
+    width: 100%;
+    height: 60px;
+    background: #019fe8;
+    box-shadow: 0 2px 10px -2px rgba(0,0,0,.75);
+    position: relative;
+    user-select: none;
+}
+
+.loading{
+    height: 10px;
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.loading span{
+    vertical-align: top;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 5px;
+}
+
+.loading span:nth-child(1){
+    animation: span1 1s infinite;
+    -webkit-animation: span1 1s infinite;
+    -moz-animation: span1 1s infinite;
+    -o-animation: span1 1s infinite;
+}
+
+.loading span:nth-child(2){
+    animation: span2 1s infinite;
+    -webkit-animation: span2 1s infinite;
+    -moz-animation: span2 1s infinite;
+    -o-animation: span2 1s infinite;
+}
+
+.loading span:nth-child(3){
+    animation: span3 1s infinite;
+    -webkit-animation: span3 1s infinite;
+    -moz-animation: span3 1s infinite;
+    -o-animation: span3 1s infinite;
+}
+
+@keyframes span1 {
+    0%{margin-top: 0}
+    25%{margin-top: -10px}
+    50%{margin-top: 0}
+    75%{margin-top: 0}
+    100%{margin-top: 0}
+}
+
+@keyframes span2 {
+    0%{margin-top: 0}
+    25%{margin-top: 0}
+    50%{margin-top: -10px}
+    75%{margin-top: 0}
+    100%{margin-top: 0}
+}
+
+@keyframes span3 {
+    0%{margin-top: 0}
+    25%{margin-top: 0}
+    50%{margin-top: 0}
+    75%{margin-top: -10px}
+    100%{margin-top: 0}
+}
+
+.chat-screen{
+    width: 100%;
+    height: calc(100% - 110px);;
+    background-color: #d5e7f5;
+    background-image: url("../source/amam.png");
+    background-size: 50%;
+    margin: 0 auto;
+    position: relative;
+    overflow-y: auto;
+    /*cursor: url("../source/arrow.png"),auto;*/
+
+}
+
+/*定义滚动条样式*/
+.chat-screen::-webkit-scrollbar{
+    width: 8px;
+    opacity: .6;
+}
+
+.chat-screen::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgba(137, 186, 226, .5);
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.chat-screen::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    /*border-radius: 10px;*/
+    background: #EDEDED;
+}
+
+.chat-message{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    overflow: auto;
+}
+
+.chat-message .makeup:before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 0;
+    height: 0;
+}
+
+.makeup{
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 5px 5px 5px 0;
+    display: inline-block;
+    background: #fff;
+    position: relative;
+    font-size: 14px;
+}
+
+.chat-message span{
+    margin-left: 5px;
+    font-size: 10px;
+    color: #2aa198;
+    user-select: none;
+}
+
+.robot .makeup{
+    margin-left: 10px;
+    float: left;
+    background: #fff;
+}
+
+.robot .makeup:before{
+    right: 100%;
+    border-left: 8px solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 8px solid #fff;
+}
+
+.human .makeup{
+    margin-right: 10px;
+    float: right;
+    background: #dcf8c6;
+}
+
+.human .makeup:before{
+    left: 100%;
+    border-left: 0 solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #dcf8c6;
+}
+
+.message-bar{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+}
+
+.message-bar textarea{
+    width: calc(100% - 50px);
+    margin-left: 10px;
+    border: none;
+    font-size: 16px;
+    line-height: 27px;
+    height: 27px;
+    outline: none;
+    resize: none;
+}
+
+.message-bar .submit{
+    position: relative;
+    background: url("../source/send.png") center center no-repeat;
+    background-size: 24px 24px;
+    height: 48px;
+    width: 48px;
+    border: none;
+}
