@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    padding: 10px;
+    background: whitesmoke;
+}
+
+/*v1*/
+.v1 {
+    width: 330px;
+    height: 200px;
+    margin: 0 10px 10px 0;
+    background: #fff;
+    float: left;
+}
+
+.v1 .handle_box {
+    float: left;
+    width: 300px;
+    height: 200px;
+}
+
+.v1 .handle_box .handle {
+    width: 150px;
+    height: 50px;
+    margin: 100px;
+    background: url("../img/handle.png") no-repeat;
+    transform-origin: 12% 50%;
+    cursor: pointer;
+}
+
+.v1 .volume_box {
+    float: left;
+}
+
+.volume_box i {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../img/horn.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.volume_box .volume_o {
+    position: relative;
+    width: 15px;
+    height: 100px;
+    background: #ccc;
+}
+
+.volume_box .volume_i {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: #2aa198;
+}
+
+/*v2*/
+.v2 {
+    width: 330px;
+    height: 200px;
+    background: #fff;
+    float: left;
+    position: relative;
+    display: flex;
+    align-items:center;
+}
+
+.v2 .bg {
+    width: 1px;
+    height: 1px;
+    background: yellow;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    /*transform: scale(20,20);*/
+    position: absolute;
+    left: 35px;
+    /*z-index: 1;*/
+}
+
+.v2 .horn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: url("../img/horn1.png") no-repeat;
+    background-size: 70px 70px;
+    cursor: pointer;
+    position: absolute;
+    /*z-index: 2;*/
+}
+
+.v2 .ball{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2aa198;
+    position: absolute;
+    left: 35px;
+}
