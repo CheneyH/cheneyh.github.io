@@ -1,4 +1,6 @@
 $(function () {
+    var sound = new Sound("source/music.mp3");
+    //sound.volume = 0;
     var img = new Image();
     img.src = "source/TB1qq7kNXXXXXacXFXXXXXXXXXX-400-186.png";
     var $cvs = $("canvas");
@@ -12,18 +14,22 @@ $(function () {
 
     function initEvent() {
         $(".down").on("click",function () {
+            sound.playMove();
             tetris.down();
         });
 
         $(".left").on("click",function () {
+            sound.playMove();
             tetris.left();
         });
 
         $(".right").on("click",function () {
+            sound.playMove();
             tetris.right();
         });
 
         $(".rotate").on("click",function () {
+            sound.playRotate();
             tetris.rotate();
         });
 

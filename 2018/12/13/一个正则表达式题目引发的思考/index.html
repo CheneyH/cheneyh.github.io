@@ -12,17 +12,17 @@
         
         Cheney 的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的     var style = document.createElement(“style”);    style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;bord">
+    <meta name="description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 let style = document.createElement(“style”);style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-botto">
 <meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个正则表达式题目引发的思考">
 <meta property="og:url" content="https://cheneyh.github.io/2018/12/13/一个正则表达式题目引发的思考/index.html">
 <meta property="og:site_name" content="Cheney 的博客">
-<meta property="og:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的     var style = document.createElement(“style”);    style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;bord">
-<meta property="og:updated_time" content="2018-12-23T03:05:34.261Z">
+<meta property="og:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 let style = document.createElement(“style”);style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-botto">
+<meta property="og:updated_time" content="2019-10-03T17:02:01.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个正则表达式题目引发的思考">
-<meta name="twitter:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的     var style = document.createElement(“style”);    style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;bord">
+<meta name="twitter:description" content="发现一个练习正则表达式的网站，分享给大家Regex Golf这里面有一道abba的题，题目是这样的 let style = document.createElement(“style”);style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-botto">
     
         <link rel="alternative" href="/atom.xml" title="Cheney 的博客" type="application/atom+xml">
     
@@ -54,6 +54,7 @@ ga('send', 'pageview');
     
 
     <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
     <link rel="stylesheet" href="/dist/APlayer.min.css">
     <!-- 页面点击小红心 -->
     <script type="text/javascript" src="/js/clicklove.js"></script>
@@ -70,6 +71,11 @@ ga('send', 'pageview');
 </head>
 
 <body>
+  <script>
+    if(window.location.pathname !== "/login.html" && $.cookie("username") === undefined){
+      window.location.href = '/login.html';
+    }
+  </script>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
@@ -80,7 +86,7 @@ ga('send', 'pageview');
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/favicon.ico" class="js-avatar">
+			<img src="/img/header.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Cheney</a></h1>
@@ -144,7 +150,7 @@ ga('send', 'pageview');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/img/favicon.ico" class="js-avatar">
+				<img src="/img/header.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Cheney</h1>
@@ -216,7 +222,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>发现一个练习正则表达式的网站，分享给大家<br><a href="https://alf.nu/RegexGolf" target="_blank" rel="external">Regex Golf</a><br><br>这里面有一道abba的题，题目是这样的</p>
-<p><script><br>    var style = document.createElement(“style”);<br>    style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:#f9f9f9;}.col-md-0 div{border:solid 1px #ccc;padding-left:20%;height:30px;line-height:30px;text-align:left;overflow:hidden;}.col-md-0 td{width:50%;padding:0;}”<br>    document.body.appendChild(style);<br></script></p>
+<p><script>let style = document.createElement(“style”);style.innerText = “.table-md-0{width:100%;border:none;text-align:center;}b{border-radius: 3px;border-bottom: 1px solid black;}i{border:1px solid #ccc;padding:0 5px;background:#f9f9f9;}.col-md-0 div{border:solid 1px #ccc;padding-left:20%;height:30px;line-height:30px;text-align:left;overflow:hidden;}.col-md-0 td{width:50%;padding:0;}”;document.body.appendChild(style);</script></p>
 <table class="table-md-0"><tr><th>Match all of these…</th><th>and none of these…</th></tr><tr><td>acritan</td><td>abba</td></tr><tr><td>aesthophysiology</td><td>anallagmatic</td></tr><tr><td>amphimictical</td><td>bassarisk</td></tr><tr><td>baruria</td><td>chorioallantois</td></tr><tr><td>calomorphic</td><td>coccomyces</td></tr><tr><td>disarmature</td><td>commotive</td></tr><tr><td>effusive</td><td>engrammatic</td></tr><tr><td>fluted</td><td>glossoscopia</td></tr><tr><td>fusoid</td><td>hexacoralla</td></tr><tr><td>goblinize</td><td>hippogriffin</td></tr><tr><td>nihilistic</td><td>inflammableness</td></tr><tr><td>noisefully</td><td>otto</td></tr><tr><td>picrorhiza</td><td>overattached</td></tr><tr><td>postarytenoid</td><td>saffarid</td></tr><tr><td>revolutionize</td><td>sarraceniaceae</td></tr><tr><td>suprasphanoidal</td><td>scillipicrin</td></tr><tr><td>suspenseful</td><td>tlapallan</td></tr><tr><td>tapachula</td><td>trillion</td></tr><tr><td>transmit</td><td>unclassably</td></tr><tr><td>unversatile</td><td>unfitting</td></tr><tr><td>vibetoite</td><td>unsmelled</td></tr></table><br><a id="more"></a><br><br>通过分析得知，第二列的字符串中都含有形如abba格式的子串，例如 an<b>alla</b>gmatic，infl<b>amma</b>bleness 等等。既然得知了匹配规律，那开始写正则表达式吧。<br><br>唰唰唰<del>~<br><br>搞定</del><br><br><br>    /(\w)(\w)\2\1/g<br>当我沾沾自喜的时候，发现事情并不简单，测试不通过，再仔细看，原来是匹配不包含abba格式的字符串。<br><br>换个写法试试：<br><br>    /[^((\w)(\w)\2\1)]/<br>结果还是不行，原来<i>^</i>号表示不接受该字符集合，而题目中的复杂逻辑不适用。<br><br>然后想到正则表达式有断言的查找方法。<br>即 <i>?=</i>,<i>?!</i>,<i>?&lt;=</i>,<i>?&lt;!=</i>。<br><table class="col-md-0"><td><div>前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?=exp2</i>)</div><div>后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;=exp2</i>)exp1</div><div>负前瞻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1(<i>?!exp2</i>)</div><div>负后顾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>?&lt;!=exp2</i>)exp1</div></td><td><div>查找exp2前面的exp1</div><div>查找exp2后面的exp1</div><div>查找后面不是exp2的exp1</div><div>查找前面不是exp2的exp1</div></td></table>
 
 <p>1.&nbsp;&nbsp;?=<br><br>匹配后跟exp2的exp1，但不返回exp2<br><br>例如：<br></p>
@@ -411,7 +417,7 @@ console.log(reg.test(&quot;anallagmatic&quot;)); // false
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Cheney
+    		&copy; 2020 Cheney
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -499,7 +505,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -511,19 +521,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color2">apache</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+                <a href="javascript:void(0)" class="js-tag color1">WampServer</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -535,11 +541,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">apache</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">WampServer</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
             
             <div class="clearfix"></div>
@@ -611,9 +617,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
     <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
+        It's a separate element as animating opacity is faster than rgba(). -->
     <div class="pswp__bg"></div>
 
     <!-- Slides wrapper with overflow:hidden. -->

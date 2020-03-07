@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cheney 的博客</title>
+  <link rel="icon" href="/img/favicon.ico" />
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/md5.js"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <embed autoplay="true" src="music/demon.mp3" width="0" height="0">
+  <style>
+    body{
+      background: url("img/bg.jpg") no-repeat;
+      background-size: cover;
+    }
+    .input__inner{
+      margin: 0 auto;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .input__inner span {
+      display: inline-block;
+      width: 48px;
+      text-align: right;
+    }
+
+    .input__inner input {
+      -webkit-appearance: none;
+      background-color: rgba(0,0,0,0);
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-block;
+      font-size: inherit;
+      height: 32px;
+      line-height: 32px;
+      outline: none;
+      padding: 0 15px;
+      transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+      margin-left: 50px;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 9px 15px;
+      font-size: 12px;
+      border-radius: 3px;
+      display: inline-block;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+      background: rgba(0,0,0,0);
+      border: 1px solid #dcdfe6;
+      color: #fff;
+      -webkit-appearance: none;
+      text-align: center;
+      box-sizing: border-box;
+      outline: none;
+      margin: 0 40px;
+      transition: .1s;
+      font-weight: 500;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+  <script>
+    if($.cookie("username") !== undefined){
+      window.location.href = '/';
+    }
+  </script>
+</head>
+
+<body>
+  <div style="width: 100%;text-align: center;position: fixed;bottom: 20px">
+    <div class="input__inner">
+      <span>用户名</span><input id="username" type="text" placeholder="" />
+    </div>
+    <div class="input__inner">
+      <span>密码</span><input id="password" type="password" placeholder="" />
+    </div>
+    <button id="loginin">登录</button>
+    <button>注册</button>
+  </div>
+  <script>
+    console.log($.cookie("_gid"));
+    let loginin = $("#loginin");
+    loginin.click(() => {
+      let username = $("#username").val();
+      let password = $("#password").val();
+      if(username === ""){
+        alert("请输入用户名");
+        return;
+      }
+      if(password === ""){
+        alert("请输入密码");
+        return;
+      }
+      $.cookie("username", hex_md5(username), { expires: 7 });
+      $.cookie("pwd", hex_md5(password), { expires: 7 });
+      window.location.href = '/';
+    })
+  </script>
+</body>
+
+</html>

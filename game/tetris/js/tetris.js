@@ -203,8 +203,20 @@
         },
         down: function () {
             this.direction = 2;
-            if (this.check()) {
+            if (this.checkTouch()) {
                 Array.prototype.push.apply(this.matrix, clone(this.current));
+                var y_clear = this.checkClear();
+                var _matrix = clone(this.matrix);
+                for (var y of y_clear) {
+                    for (var index in _matrix) {
+                        if (_matrix[index].y < y) {
+                            this.matrix[index].y++;
+                        } else if (_matrix[index].y === y) {
+                            this.matrix.splice(this.matrix.indexOf(_matrix[index]), 1);
+                        }
+                    }
+                }
+                // console.log(this.current, this.matrix);
                 this.createNext();
                 return false;
             } else {
@@ -215,7 +227,7 @@
         },
         left: function () {
             this.direction = 0;
-            if (this.check()) {
+            if (this.checkTouch()) {
                 return false;
             } else {
                 for (var index in this.current) {
@@ -225,7 +237,7 @@
         },
         right: function () {
             this.direction = 1;
-            if (this.check()) {
+            if (this.checkTouch()) {
                 return false;
             } else {
                 for (var index in this.current) {
@@ -240,7 +252,7 @@
                 this.current[index].y = temp[0].y + temp[index].x - temp[0].x;
             }
         },
-        check: function () {
+        checkTouch: function () {
             var flag = false;
             if (this.direction === 0) {
                 for (var index in this.current) {
@@ -292,6 +304,28 @@
                     }
             }
             return flag;
+        },
+        checkClear: function () {
+            // 返回需要清除的行值
+            var temp = [];
+            var y_clear = [];
+            for (var point of this.current) {
+                if (temp.indexOf(point.y) === -1) {
+                    temp.push(point.y);
+                }
+            }
+            for (var y of temp) {
+                var count = 0;
+                for (var point of this.matrix) {
+                    if (y === point.y) {
+                        count++;
+                    }
+                }
+                if (count === 10) {
+                    y_clear.push(y);
+                }
+            }
+            return y_clear;
         },
         setInterval: function (fn) {
             var timer = setInterval(function () {
